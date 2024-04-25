@@ -1,0 +1,16 @@
+prototype(Neos.Fusion.Form:Runtime.RuntimeForm) {
+    @cache {
+        mode = 'dynamic'
+        entryIdentifier {
+            node = ${node}
+            editPreviewMode = ${node.context.currentRenderingMode.name}
+            form = 'form'
+        }
+        entryDiscriminator = ${request.httpRequest.method != 'POST' ? 'static' : false}
+        context {
+            1 = 'node'
+            2 = 'documentNode'
+            3 = 'site'
+        }
+    }
+}

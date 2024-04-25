@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2"
+    xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file product-name="Litespeed.PaperTiger" source-language="en" datatype="plaintext">
+        <body>
+            <trans-unit id="overwriteDefaultValues" xml:space="preserve">
+                <source>Overwrite default values</source>
+            </trans-unit>
+            <trans-unit id="template" xml:space="preserve">
+                <source>Template</source>
+            </trans-unit>
+            <trans-unit id="template.website" xml:space="preserve">
+                <source>Email to the operator of the website</source>
+            </trans-unit>
+            <trans-unit id="template.sender" xml:space="preserve">
+                <source>Email to the sender of the form</source>
+            </trans-unit>
+            <trans-unit id="template.none" xml:space="preserve">
+                <source>Do not set default values</source>
+            </trans-unit>
+            <trans-unit id="options.template.thankYouForMessage" xml:space="preserve">
+                <source>Thank you {name} for your message</source>
+            </trans-unit>
+            <trans-unit id="options.template.plaintext.sender" xml:space="preserve">
+                <source>Hello {name},
+Thank you for your message. We will get back to you as soon as possible.</source>
+            </trans-unit>
+            <trans-unit id="options.template.plaintext.website" xml:space="preserve">
+                <source>{name} ({email}) has sent the following message:
+
+{message}</source>
+            </trans-unit>
+            <trans-unit id="options.template.message" xml:space="preserve">
+                <source>Thank you {name} for your message.</source>
+            </trans-unit>
+            <trans-unit id="form" xml:space="preserve">
+                <source>Form</source>
+            </trans-unit>
+            <trans-unit id="telephone" xml:space="preserve">
+                <source>Telephone</source>
+            </trans-unit>
+            <trans-unit id="addReplyToSender" xml:space="preserve">
+                <source>Integrate reply email to sender</source>
+            </trans-unit>
+            <trans-unit id="options.addItem" xml:space="preserve">
+                <source>Add an option</source>
+            </trans-unit>
+            <trans-unit id="fieldName.copy" xml:space="preserve">
+                <source>'Copy ' + $el.textContent + ' to the clipboard'</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

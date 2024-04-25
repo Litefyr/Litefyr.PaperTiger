@@ -1,0 +1,5 @@
+Neos.Neos:ContentCollection:
+  constraints:
+    nodeTypes:
+      Sitegeist.PaperTiger:Field.Constraint: false
+      Sitegeist.PaperTiger:Action.Constraint: false

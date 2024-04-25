@@ -1,0 +1,5 @@
+Sitegeist.PaperTiger:Field.Text.MultiLine:
+  ui:
+    inlineEditable: true
+  properties:
+    lineNumber: {}

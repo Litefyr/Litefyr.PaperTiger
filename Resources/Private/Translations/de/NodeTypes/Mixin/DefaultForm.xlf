@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2"
+    xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file product-name="Litespeed.PaperTiger" source-language="en" target-language="de" datatype="plaintext">
+        <body>
+            <trans-unit id="groups.formsettings" xml:space="preserve">
+                <source>Form settings</source>
+                <target>Einstellungen Formular</target>
+            </trans-unit>
+            <trans-unit id="properties.sendLabel" xml:space="preserve">
+                <source>Labeling of the send button</source>
+                <target>Beschriftung des Senden-Buttons</target>
+            </trans-unit>
+            <trans-unit id="properties.sendLabel.placeholder" xml:space="preserve">
+                <source>Send</source>
+                <target>Senden</target>
+            </trans-unit>
+            <trans-unit id="properties.isExportable" xml:space="preserve">
+                <source>Exportable</source>
+                <target>Exportierbar</target>
+            </trans-unit>
+            <trans-unit id="properties.formTitle" xml:space="preserve">
+                <source>Form title</source>
+                <target>Formulartitel</target>
+            </trans-unit>
+            <trans-unit id="properties.excludedFields" xml:space="preserve">
+                <source>Exclude fields from export</source>
+                <target>Felder vom Export ausschließen</target>
+            </trans-unit>
+            <trans-unit id="properties.excludedFields.ui.help.message" xml:space="preserve">
+                <source>Field names to be excluded from the export</source>
+                <target>Feldnamen, die vom Export ausgeschlossen werden sollen</target>
+            </trans-unit>
+            <trans-unit id="properties.excludedFields.addItem" xml:space="preserve">
+                <source>Add field</source>
+                <target>Feld hinzufügen</target>
+            </trans-unit>
+            <trans-unit id="options.template.contact" xml:space="preserve">
+                <source>Contact</source>
+                <target>Kontakt</target>
+            </trans-unit>
+            <trans-unit id="options.template.name" xml:space="preserve">
+                <source>Name</source>
+                <target>Name</target>
+            </trans-unit>
+            <trans-unit id="options.template.email" xml:space="preserve">
+                <source>Email</source>
+                <target>E-Mail</target>
+            </trans-unit>
+            <trans-unit id="options.template.message" xml:space="preserve">
+                <source>Message</source>
+                <target>Nachricht</target>
+            </trans-unit>
+            <trans-unit id="options.template.action.email" xml:space="preserve">
+                <source>{name} ({email}) has sent the following message:
+
+{message}</source>
+                <target>{name} ({email}) hat folgende Nachricht gesendet:
+
+{message}</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

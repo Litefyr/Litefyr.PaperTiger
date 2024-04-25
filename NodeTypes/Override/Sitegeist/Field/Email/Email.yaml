@@ -1,0 +1,13 @@
+Sitegeist.PaperTiger:Field.Email:
+  ui:
+    inlineEditable: true
+  options:
+    template:
+      properties:
+        label: "${I18n.translate('Sitegeist.PaperTiger:NodeTypes.Field.Email:ui.label')}"
+  properties:
+    name:
+      defaultValue: email
+    label:
+      ui:
+        showInCreationDialog: false

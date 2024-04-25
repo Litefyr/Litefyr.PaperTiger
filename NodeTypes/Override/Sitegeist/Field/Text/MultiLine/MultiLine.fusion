@@ -1,0 +1,27 @@
+prototype(Sitegeist.PaperTiger:Field.Text.MultiLine) {
+    placeholder.@process.required = ${this.isRequired && !this.label ? value + ' *' : value}
+
+    renderer >
+    renderer = afx`
+        <Sitegeist.PaperTiger:FieldContainer
+            field.name={props.name}
+            label={props.label}
+            placeholder={props.placeholder}
+        >
+            <Neos.Fusion.Form:Textarea
+                attributes.x-grow={true}
+                attributes.class.@process.push={Tailwind.merge("w-full resize-none transition-all", value)}
+                attributes.required={props.isRequired || false}
+                attributes.minlength={props.minimumLength || false}
+                attributes.maxlength={props.maximumLength || false}
+                attributes.pattern={props.regularExpression || false}
+                attributes.placeholder={props.placeholder || false}
+                attributes.rows={props.lineNumber || false}
+                attributes.oninvalid={"this.setCustomValidity('" + props.customErrorMessage + "')"}
+                attributes.oninvalid.@if={props.customErrorMessageEnabled}
+                attributes.oninput={"this.setCustomValidity('')"}
+                attributes.oninput.@if={props.customErrorMessageEnabled}
+            />
+        </Sitegeist.PaperTiger:FieldContainer>
+    `
+}

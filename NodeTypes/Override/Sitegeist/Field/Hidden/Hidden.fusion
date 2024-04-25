@@ -1,0 +1,9 @@
+prototype(Sitegeist.PaperTiger:Field.Hidden) {
+    renderer.backend.renderer = afx`
+        <div>
+            <strong>
+                {Carbon.Backend.translate('ui.label', null, [], 'NodeTypes/Field/Hidden', 'Sitegeist.PaperTiger')}
+            </strong> {props.name}:{props.value}
+        </div>
+    `
+}

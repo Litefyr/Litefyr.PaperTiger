@@ -1,0 +1,155 @@
+prototype(Sitegeist.PaperTiger:Form) {
+    breakout = ${q(node).property('breakout')}
+    enableText = ${q(node).property('enableText')}
+    theme = ${q(node).property('theme')}
+    leftColSize = ${q(node).property('leftColSize')}
+    textLeft = ${q(node).property('textLeft')}
+    links = Litespeed.Theme:Component.Links
+
+    inMultiColumn = ${this.enableText}
+
+    headline = Neos.Neos:Editable {
+        property = 'headline'
+        block = false
+    }
+
+    label = Neos.Neos:Editable {
+        property = 'label'
+        block = false
+    }
+
+    text = Neos.Neos:Editable {
+        property = 'text'
+    }
+
+    anchor = ''
+    inBackend = ${node.context.inBackend}
+
+    @context {
+        _currentPage = Neos.Neos:NodeUri {
+            node = ${documentNode}
+        }
+        _nodeIdentifier = ${node.identifier}
+    }
+
+    renderer.runtimeForm.renderer.form {
+        @cache.context {
+            currentPage = '_currentPage'
+            identifier  = '_nodeIdentifier'
+        }
+        attributes {
+            x-target = ${'form_' + _nodeIdentifier}
+            x-init = true
+            action = ${_currentPage + _formAction}
+        }
+
+        // Add a submit button and the antispam fields per default
+        process {
+            schema >
+            schema = Sitegeist.PaperTiger:FieldCollection.Schema {
+                nodePath = 'fields'
+                renderer.schemaMap.initialValue = Neos.Fusion:DataStructure {
+                    corpusDelicti = ${Form.Schema.string().validator('StringLength', {minimum:0, maximum:0})}
+                    errareHumanumEst = ${Form.Schema.string().isRequired().validator('RegularExpression', {regularExpression: '/^nolensVolens$/'})}
+                    time = ${Form.Schema.string().isRequired().validator('Sitegeist.PaperTiger:TimestampWithHmac', {'minimumAge': 10, 'maximumAge': 86400})}
+                }
+            }
+            content.@process.spamProtection = afx`
+                {value}
+                <div
+                    x-data={AlpineJS.object({t:PaperTiger.timestampWithHmac()})}
+                    'x-on:touchstart.window.once'="$dispatch('fill')"
+                    'x-on:keydown.window.once'="$dispatch('fill')"
+                    'x-on:mousemove.window.once'="$dispatch('fill')"
+                    'x-on:touchmove.window.once'="$dispatch('fill')"
+                    class="!hidden"
+                >
+                    <Neos.Fusion.Form:FieldContainer
+                        label={Translation.translate('field.corpusDelicti', null, [], 'Main', 'Litespeed.PaperTiger')}
+                        labelRenderer="Sitegeist.PaperTiger:Label"
+                        field.name="corpusDelicti"
+                    >
+                        <Neos.Fusion.Form:Input attributes.autocomplete="off" attributes.tabindex="-1" attributes.id={'field_' + field.getName()} />
+                    </Neos.Fusion.Form:FieldContainer>
+                    <Neos.Fusion.Form:FieldContainer
+                        label={Translation.translate('field.errareHumanumEst', null, [], 'Main', 'Litespeed.PaperTiger')}
+                        labelRenderer="Sitegeist.PaperTiger:Label"
+                        field.name="errareHumanumEst"
+                    >
+                        <Neos.Fusion.Form:Input
+                            attributes.autocomplete="off"
+                            attributes.tabindex="-1"
+                            attributes.'x-on:fill.window.once'="$el.value='nolensVolens'"
+                            attributes.id={'field_' + field.getName()}
+                        />
+                    </Neos.Fusion.Form:FieldContainer>
+                    <Neos.Fusion.Form:Hidden
+                        field.name="time"
+                        attributes.'x-on:fill.window.once'="$el.value=t"
+                    />
+                </div>
+            `
+            footer = Litespeed.PaperTiger:Component.SendButton
+        }
+    }
+
+    // Backend rendering
+    renderer.backend.renderer >
+    renderer.backend.renderer = afx`
+        <Litespeed.Presentation:Spacing padding={!props.inMultiColumn}>
+            <h2 class="border-b border-theme-front text-2xl text-theme-front mt-8 mb-4 pb-4 flex gap-4 items-center">
+                <span class="flex items-center justify-center bg-theme-front text-base text-theme-back rounded-full text-center min-w-8 min-h-8">1</span>
+                {Carbon.Backend.translate('form.formFields.header', null, [], 'Main', 'Sitegeist.PaperTiger')}
+            </h2>
+        </Litespeed.Presentation:Spacing>
+        <form class={_formClass}>
+            <Sitegeist.PaperTiger:FieldCollection.Renderer nodePath="fields" />
+            <Litespeed.PaperTiger:Component.SendButton />
+        </form>
+        <Litespeed.Presentation:Spacing padding={!props.inMultiColumn} tailwind="text-theme-front">
+            <h2 class="border-b border-theme-front text-2xl text-theme-front mt-8 mb-4 pb-4 flex gap-4 items-center">
+                <span class="flex items-center justify-center bg-theme-front text-base text-theme-back rounded-full text-center min-w-8 min-h-8">2</span>
+                {Carbon.Backend.translate('form.followUpActions.header', null, [], 'Main', 'Sitegeist.PaperTiger')}
+            </h2>
+            <Sitegeist.PaperTiger:ActionCollection.Fieldnames nodePath="fields" />
+            <Sitegeist.PaperTiger:ActionCollection.Preview nodePath="actions" attributes.class="prose" />
+        </Litespeed.Presentation:Spacing>
+    `
+
+    fileLoader = Carbon.FileLoader:Strategy.Attributes {
+        package = 'Litespeed.Presentation'
+        js = 'Ajax.js'
+        eventOnLoad = 'presentation:init'
+    }
+
+    renderer.@process {
+        spacing = afx`
+            <Litespeed.Presentation:Spacing
+                padding={!props.inMultiColumn}
+                waveSpacing={true}
+                class="w-full has-prose loading-indicator"
+                id={"form_" + node.identifier}
+                "x-merge.transition"="update"
+                content={value}
+                {...props.fileLoader}
+            />
+        `
+
+        // Add Text field
+        textField = Litespeed.Presentation:Module.TextWithContent {
+            @if.enable = ${props.enableText}
+
+            align = 'start'
+            breakout = ${props.breakout}
+            theme = ${props.theme}
+            leftColSize = ${props.leftColSize}
+            textLeft = ${props.textLeft}
+            links = ${props.links}
+            headline = ${props.headline}
+            label = ${props.label}
+            text = ${props.text}
+            inBackend = ${props.inBackend}
+            content = ${value}
+        }
+    }
+}

@@ -1,0 +1,4 @@
+Sitegeist.PaperTiger:Field.Number:
+  ui:
+    inlineEditable: true
+    icon: sort-numeric-down

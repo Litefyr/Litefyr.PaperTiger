@@ -1,0 +1,5 @@
+Sitegeist.PaperTiger:Mixin.Label:
+  properties:
+    label:
+      options:
+        preset: 'text.label'

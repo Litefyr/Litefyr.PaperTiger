@@ -1,0 +1,16 @@
+prototype(Sitegeist.PaperTiger:Label) {
+    placeholder = ${q(node).property('placeholder')}
+    _scrambleTranslatedLabels = ${Configuration.Setting('Neos.Neos.userInterface.scrambleTranslatedLabels')}
+    _label = ${this.label || this.placeholder}
+    renderer.default.renderer >
+    renderer.default.renderer = afx`
+        <label
+            @if.hasLabel={props._label}
+            for={props.for}
+            class={props.label ? null : "sr-only"}
+        >
+            {props._scrambleTranslatedLabels ? props._label : I18n.id(props._label).package(props.translationPackage).source(props.translationSource).value(props._label).translate()}
+            <span @if={props.isRequired} class="text-red-700"> *</span>
+        </label>
+    `
+}

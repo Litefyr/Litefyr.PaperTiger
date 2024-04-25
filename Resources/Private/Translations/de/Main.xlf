@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2"
+    xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file product-name="Litespeed.PaperTiger" source-language="en" target-language="de" datatype="plaintext">
+        <body>
+            <trans-unit id="send" xml:space="preserve">
+                <source>Send</source>
+                <target>Senden</target>
+            </trans-unit>
+            <trans-unit id="configuration.missing" xml:space="preserve">
+                <source>The following configuration is missing: {0}</source>
+                <target>Die folgende Konfiguration fehlt: {0}</target>
+            </trans-unit>
+            <trans-unit id="configuration.missing.dsn" xml:space="preserve">
+                <source>DSN configuration</source>
+                <target>DSN Konfiguration</target>
+            </trans-unit>
+            <trans-unit id="configuration.missing.recipientAddress" xml:space="preserve">
+                <source>Email address recipient</source>
+                <target>E-Mail Adresse Empfänger</target>
+            </trans-unit>
+            <trans-unit id="configuration.missing.senderAddress" xml:space="preserve">
+                <source>Sender email address</source>
+                <target>E-Mail Adresse Sender</target>
+            </trans-unit>
+            <trans-unit id="configuration.missing.textOrHtml" xml:space="preserve">
+                <source>Text or HTML</source>
+                <target>Text oder HTML</target>
+            </trans-unit>
+            <trans-unit id="backend.recipient" xml:space="preserve">
+                <source>Recipient</source>
+                <target>Empfänger</target>
+            </trans-unit>
+            <trans-unit id="backend.sender" xml:space="preserve">
+                <source>Sender</source>
+                <target>Sender</target>
+            </trans-unit>
+            <trans-unit id="backend.yes" xml:space="preserve">
+                <source>Yes</source>
+                <target>Ja</target>
+            </trans-unit>
+            <trans-unit id="backend.no" xml:space="preserve">
+                <source>No</source>
+                <target>Nein</target>
+            </trans-unit>
+            <trans-unit id="backend.email.invalid" xml:space="preserve">
+                <source><![CDATA[<strong class="text-current">{0}</strong> is not a valid e-mail address]]></source>
+                <target><![CDATA[<strong class="text-current">{0}</strong> ist keine valide E-Mail Adresse]]></target>
+            </trans-unit>
+            <trans-unit id="field.corpusDelicti" xml:space="preserve">
+                <source>Please leave this field empty</source>
+                <target>Lassen Sie dieses Feld bitte leer</target>
+            </trans-unit>
+            <trans-unit id="field.errareHumanumEst" xml:space="preserve">
+                <source>Please do not modify this field</source>
+                <target>Bitte ändern Sie dieses Feld nicht</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

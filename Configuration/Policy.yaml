@@ -1,0 +1,18 @@
+privilegeTargets:
+  'Neos\ContentRepository\Security\Authorization\Privilege\Node\EditNodePropertyPrivilege':
+    'Litespeed.PaperTiger:FormProperties':
+      label: Edit the settings for Forms
+      matcher: 'nodePropertyIsIn(["paperTigerMailerDsn", "paperTigerRecipientAddress", "paperTigerRecipientName", "paperTigerSenderAddress", "paperTigerSenderName", "paperTigerSubject"])'
+
+roles:
+  'Neos.Neos:Administrator':
+    privileges:
+      - privilegeTarget: 'Litespeed.PaperTiger:FormProperties'
+        permission: GRANT
+
+  'Litespeed.Style:FormPropertiesEditor':
+    label: Formular settings
+    description: Grants access to the properties to edit the basic configuration for PaperTiger
+    privileges:
+      - privilegeTarget: 'Litespeed.PaperTiger:FormProperties'
+        permission: GRANT

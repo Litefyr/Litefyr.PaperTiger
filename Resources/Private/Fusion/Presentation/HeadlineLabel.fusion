@@ -1,0 +1,18 @@
+prototype(Litespeed.PaperTiger:Presentation.HeadlineLabel) < prototype(Neos.Fusion:Component) {
+    @propTypes {
+        class = ${PropTypes.anyOf( PropTypes.string, PropTypes.arrayOf( PropTypes.string ) )}
+        label = ${PropTypes.string}
+        showLabel = ${PropTypes.boolean}
+        isRequired = ${PropTypes.boolean}
+    }
+
+    class = 'block text-lg'
+    showLabel = true
+
+    renderer = afx`
+        <h3 @if={props.label && props.showLabel} class={props.class}>
+            {props.label}
+            <span @if={props.isRequired} class="text-red-700"> *</span>
+        </h3>
+    `
+}

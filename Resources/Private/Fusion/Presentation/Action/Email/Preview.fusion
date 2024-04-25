@@ -1,0 +1,76 @@
+prototype(Litespeed.PaperTiger:Presentation.Action.Email.Preview) < prototype(Neos.Fusion:Component) {
+    @propTypes {
+        class = ${PropTypes.anyOf( PropTypes.string, PropTypes.arrayOf( PropTypes.string ) )}
+        plaintext = ${PropTypes.string}
+        html = ${PropTypes.string}
+        senderAddress = ${PropTypes.string}
+        recipientAddress = ${PropTypes.string}
+        recipientName = ${PropTypes.string}
+        replyToAddress = ${PropTypes.string}
+        carbonCopyAddress = ${PropTypes.string}
+        dsn = ${PropTypes.string}
+        blindCarbonCopyAddress = ${PropTypes.string}
+        senderName = ${PropTypes.string}
+        subject = ${PropTypes.string}
+        attachUploads = ${PropTypes.boolean}
+    }
+
+
+    @private {
+        requiredFields = Neos.Fusion:DataStructure {
+            dsn = ${Carbon.Backend.translate('configuration.missing.dsn', null, [], 'Main', 'Litespeed.PaperTiger')}
+            dsn.@if.isMissing = ${!props.dsn}
+
+            recipientAddress = ${Carbon.Backend.translate('configuration.missing.recipientAddress', null, [], 'Main', 'Litespeed.PaperTiger')}
+            recipientAddress.@if.isMissing = ${!props.recipientAddress}
+
+            senderAddress = ${Carbon.Backend.translate('configuration.missing.senderAddress', null, [], 'Main', 'Litespeed.PaperTiger')}
+            senderAddress.@if.isMissing  = ${!props.senderAddress}
+
+            textOrHtml = ${Carbon.Backend.translate('configuration.missing.textOrHtml', null, [], 'Main', 'Litespeed.PaperTiger')}
+            textOrHtml.@if.isMissing=${!(props.plaintext || props.html)}
+        }
+    }
+
+    renderer = afx`
+        <Carbon.Notification:Backend
+            @if={Carbon.Array.check(private.requiredFields)}
+            type="alert"
+            content={Carbon.Backend.translate('configuration.missing', null, [Array.join(private.requiredFields, ', ')], 'Main', 'Litespeed.PaperTiger')}
+        />
+        <dl>
+            <dt>{Carbon.Backend.translate('properties.subject', null, [], 'NodeTypes/Action/Email', 'Sitegeist.PaperTiger')}</dt>
+            <dd>{props.subject}</dd>
+            <Neos.Fusion:Fragment @if={props.html}>
+                <dt>HTML</dt>
+                <dd>{props.html}</dd>
+            </Neos.Fusion:Fragment>
+            <Neos.Fusion:Fragment @if={props.plaintext}>
+                <dt>{Carbon.Backend.translate('properties.plaintext', null, [], 'NodeTypes/Action/Email', 'Sitegeist.PaperTiger')}</dt>
+                <dd><p>{String.nl2br(props.plaintext)}</p></dd>
+            </Neos.Fusion:Fragment>
+            <Neos.Fusion:Fragment @if={props.recipientAddress}>
+                <dt>{Carbon.Backend.translate('backend.recipient', null, [], 'Main', 'Litespeed.PaperTiger')}</dt>
+                <dd><Litespeed.PaperTiger:Presentation.EmailLink name={props.recipientName} email={props.recipientAddress} /></dd>
+            </Neos.Fusion:Fragment>
+            <Neos.Fusion:Fragment @if={props.senderAddress}>
+                <dt>{Carbon.Backend.translate('backend.sender', null, [], 'Main', 'Litespeed.PaperTiger')}</dt>
+                <dd><Litespeed.PaperTiger:Presentation.EmailLink name={props.senderName} email={props.senderAddress} /></dd>
+            </Neos.Fusion:Fragment>
+            <Neos.Fusion:Fragment @if={props.replyToAddress}>
+                <dt>{Carbon.Backend.translate('properties.replyToAddress', null, [], 'NodeTypes/Action/Email', 'Sitegeist.PaperTiger')}</dt>
+                <dd><Litespeed.PaperTiger:Presentation.EmailLink email={props.replyToAddress} /></dd>
+            </Neos.Fusion:Fragment>
+            <Neos.Fusion:Fragment @if={props.carbonCopyAddress}>
+                <dt>{Carbon.Backend.translate('properties.carbonCopyAddress', null, [], 'NodeTypes/Action/Email', 'Sitegeist.PaperTiger')}</dt>
+                <dd><Litespeed.PaperTiger:Presentation.EmailLink email={props.carbonCopyAddress} /></dd>
+            </Neos.Fusion:Fragment>
+            <Neos.Fusion:Fragment @if={props.blindCarbonCopyAddress}>
+                <dt>{Carbon.Backend.translate('properties.blindCarbonCopyAddress', null, [], 'NodeTypes/Action/Email', 'Sitegeist.PaperTiger')}</dt>
+                <dd><Litespeed.PaperTiger:Presentation.EmailLink email={props.blindCarbonCopyAddress} /></dd>
+            </Neos.Fusion:Fragment>
+            <dt>{Carbon.Backend.translate('properties.attachUploads', null, [], 'NodeTypes/Action/Email', 'Sitegeist.PaperTiger')}</dt>
+            <dd>{Carbon.Backend.translate('backend.' + (props.attachUploads ? 'yes' : 'no'), null, [], 'Main', 'Litespeed.PaperTiger')}</dd>
+        </dl>
+    `
+}

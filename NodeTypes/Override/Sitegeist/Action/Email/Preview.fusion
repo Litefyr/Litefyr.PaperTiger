@@ -1,0 +1,26 @@
+prototype(Sitegeist.PaperTiger:Action.Email.Preview) {
+    senderAddress = Litespeed.PaperTiger:Component.SenderAddress
+    senderName = Litespeed.PaperTiger:Component.SenderName
+    subject = Litespeed.PaperTiger:Component.Subject
+    recipientAddress = Litespeed.PaperTiger:Component.RecipientAddress
+    recipientName = Litespeed.PaperTiger:Component.RecipientName
+    attachUploads = ${q(node).property('attachUploads')}
+    dsn = Litespeed.PaperTiger:Component.MailerDsn
+
+    renderer >
+    renderer = afx`<Litespeed.PaperTiger:Presentation.Action.Email.Preview {...props} />`
+
+    @cache {
+        mode = 'cached'
+        entryIdentifier {
+            collection = ${node}
+            editPreviewMode = ${node.context.currentRenderingMode.name}
+            preview = 'preview'
+        }
+        entryTags {
+            1 = ${Neos.Caching.nodeTag(site)}
+            2 = ${Neos.Caching.nodeTag(node)}
+        }
+        maximumLifetime = ${q(node).context({'invisibleContentShown': true}).cacheLifetime()}
+    }
+}

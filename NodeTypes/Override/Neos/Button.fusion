@@ -1,0 +1,14 @@
+ prototype(Neos.Fusion.Form:Button) {
+    appearance = ${this.main ? 'main' : this.ghost ? 'ghost' : this.link ? 'link' : this.nested ? 'nested' : 'minor'}
+    type = 'submit'
+    renderer >
+    renderer = afx`
+        <Litespeed.Presentation:Atom.Button
+            name={field.getName()}
+            value={field.getTargetValueStringified() || null}
+            type={props.type}
+            appearance={props.appearance}
+            content={props.content}
+        />
+    `
+}

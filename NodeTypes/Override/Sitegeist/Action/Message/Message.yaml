@@ -1,0 +1,7 @@
+Sitegeist.PaperTiger:Action.Message:
+  ui:
+    inlineEditable: true
+  options:
+    template:
+      properties:
+        message: "${I18n.translate('Litespeed.PaperTiger:NodeTypes.Override.Sitegeist:options.template.message')}"

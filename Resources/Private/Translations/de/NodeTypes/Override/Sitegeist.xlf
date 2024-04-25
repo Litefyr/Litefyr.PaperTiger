@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2"
+    xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file product-name="Litespeed.PaperTiger" source-language="en" target-language="de" datatype="plaintext">
+        <body>
+            <trans-unit id="overwriteDefaultValues" xml:space="preserve">
+                <source>Overwrite default values</source>
+                <target>Standardwerte überschreiben</target>
+            </trans-unit>
+            <trans-unit id="template" xml:space="preserve">
+                <source>Template</source>
+                <target>Vorlage</target>
+            </trans-unit>
+            <trans-unit id="template.website" xml:space="preserve">
+                <source>Email to the operator of the website</source>
+                <target>E-Mail an Betreiber der Webseite</target>
+            </trans-unit>
+            <trans-unit id="template.sender" xml:space="preserve">
+                <source>Email to the sender of the form</source>
+                <target>E-Mail an Absender des Formulars</target>
+            </trans-unit>
+            <trans-unit id="template.none" xml:space="preserve">
+                <source>Do not set default values</source>
+                <target>Keine Standardwerte setzen</target>
+            </trans-unit>
+            <trans-unit id="options.template.thankYouForMessage" xml:space="preserve">
+                <source>Thank you {name} for your message</source>
+                <target>Danke {name} für Ihre Nachricht</target>
+            </trans-unit>
+            <trans-unit id="options.template.plaintext.sender" xml:space="preserve">
+                <source>Hello {name},
+Thank you for your message. We will get back to you as soon as possible.</source>
+                <target>Hallo {name},
+vielen Dank für Ihre Nachricht. Wir werden uns schnellstmöglich bei Ihnen melden.</target>
+            </trans-unit>
+            <trans-unit id="options.template.plaintext.website" xml:space="preserve">
+                <source>{name} ({email}) has sent the following message:
+
+{message}</source>
+                <target>{name} ({email}) hat folgende Nachricht gesendet:
+
+{message}</target>
+            </trans-unit>
+            <trans-unit id="options.template.message" xml:space="preserve">
+                <source>Thank you {name} for your message.</source>
+                <target>Danke {name} für Ihre Nachricht.</target>
+            </trans-unit>
+            <trans-unit id="form" xml:space="preserve">
+                <source>Form</source>
+                <target>Formular</target>
+            </trans-unit>
+            <trans-unit id="telephone" xml:space="preserve">
+                <source>Telephone</source>
+                <target>Telefon</target>
+            </trans-unit>
+            <trans-unit id="addReplyToSender" xml:space="preserve">
+                <source>Integrate reply email to sender</source>
+                <target>Antwort E-Mail an Absender integrieren</target>
+            </trans-unit>
+            <trans-unit id="options.addItem" xml:space="preserve">
+                <source>Add an option</source>
+                <target>Option hinzufügen</target>
+            </trans-unit>
+            <trans-unit id="fieldName.copy" xml:space="preserve">
+                <source>'Copy ' + $el.textContent + ' to the clipboard'</source>
+                <target>'Kopiere '+$el.textContent+' in die Zwischenablage'</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

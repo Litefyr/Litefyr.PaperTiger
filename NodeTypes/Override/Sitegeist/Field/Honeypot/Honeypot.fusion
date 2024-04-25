@@ -1,0 +1,16 @@
+prototype(Sitegeist.PaperTiger:Field.Honeypot) {
+    renderer {
+        backend.renderer = afx`
+            <div>
+                <strong>
+                    {Carbon.Backend.translate('ui.label', null, [], 'NodeTypes/Field/Honeypot', 'Sitegeist.PaperTiger')}
+                </strong>
+            </div>
+        `
+
+        default.renderer.attributes {
+            class = '!hidden'
+            style = null
+        }
+    }
+}

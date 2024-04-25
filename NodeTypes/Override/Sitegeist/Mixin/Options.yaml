@@ -1,0 +1,8 @@
+Sitegeist.PaperTiger:Mixin.Options:
+  properties:
+    options:
+      ui:
+        inspector:
+          editorOptions:
+            labels:
+              addItem: 'Litespeed.PaperTiger:NodeTypes.Override.Sitegeist:options.addItem'

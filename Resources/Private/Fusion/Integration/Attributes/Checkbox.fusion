@@ -1,0 +1,4 @@
+prototype(Litespeed.PaperTiger:Attributes.Checkbox) < prototype(Neos.Fusion:DataStructure) {
+    class = null
+    data-theme = null
+}

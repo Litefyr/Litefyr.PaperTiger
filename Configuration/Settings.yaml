@@ -1,0 +1,27 @@
+Sitegeist:
+  Neos:
+    SymfonyMailer:
+      dsn: '%env:MAILER_DSN%'
+  StoneTablet:
+    defaultExcludedFields:
+      - corpusDelicti
+      - errareHumanumEst
+      - time
+
+Base:
+  PaperTiger:
+    subject: 'Formular auf der Seite {documentLabel} wurde ausgefüllt'
+    sender:
+      address: '%env:MAILER_FROM%'
+      name: 'Website {currentSiteName}'
+
+Neos:
+  Neos:
+    fusion:
+      autoInclude:
+        Litespeed.PaperTiger: true
+    userInterface:
+      translation:
+        autoInclude:
+          Litespeed.PaperTiger:
+            - 'NodeTypes/*'

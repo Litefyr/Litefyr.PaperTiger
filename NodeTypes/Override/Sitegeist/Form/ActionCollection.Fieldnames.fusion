@@ -1,0 +1,23 @@
+prototype(Sitegeist.PaperTiger:ActionCollection.Fieldnames) {
+    description = ${Carbon.Backend.translate('actionCollection.fieldNames.description', null, [], 'Main', 'Sitegeist.PaperTiger')}
+    items = ${q(node).children(props.nodePath).find('[instanceof Sitegeist.PaperTiger:Field]').get()}
+    @if.hasNodePathAndItems = ${this.nodePath && Type.isArray(this.items) && Array.length(this.items)}
+    renderer >
+    renderer = afx`
+        <div class="flex flex-wrap gap-x-4" x-data>
+            <span @if={props.description} class="font-bold">
+                {props.description}
+            </span>
+            <Neos.Fusion:Loop items={props.items}>
+                <button
+                    x-tooltip
+                    :aria-label={Carbon.Backend.translate('fieldName.copy', null, [], 'NodeTypes/Override/Sitegeist', 'Litespeed.PaperTiger')}
+                    x-clipboard="$el.textContent"
+                    type="button"
+                >
+                    {'{' + q(item).property('name') + '}'}
+                </button>
+            </Neos.Fusion:Loop>
+        </div>
+    `
+}

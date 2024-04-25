@@ -1,0 +1,38 @@
+'Litespeed.Theme:Content.Address':
+  superTypes:
+    'Litespeed.PaperTiger:Mixin.DefaultForm': true
+  ui:
+    inspector:
+      groups:
+        formsettings:
+          position: 21
+  childNodes:
+    fields:
+      type: Sitegeist.PaperTiger:Field.Collection
+    actions:
+      type: Sitegeist.PaperTiger:Action.Collection
+  properties:
+    sendLabel:
+      ui:
+        inspector:
+          hidden: 'ClientEval: !node.properties.additionalPaperTiger'
+    isExportable:
+      ui:
+        inspector:
+          hidden: 'ClientEval: !node.properties.additionalPaperTiger'
+    formTitle:
+      ui:
+        inspector:
+          hidden: 'ClientEval: node.properties.additionalPaperTiger && node.properties.isExportable ? false : true'
+    excludedFields:
+      ui:
+        inspector:
+          hidden: 'ClientEval: node.properties.additionalPaperTiger && node.properties.isExportable ? false : true'
+    additionalPaperTiger:
+      type: boolean
+      ui:
+        label: 'Litespeed.PaperTiger:NodeTypes.Override.Base:form'
+        reloadPageIfChanged: true
+        inspector:
+          group: additionalContent
+          position: 20

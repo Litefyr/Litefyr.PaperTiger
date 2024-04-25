@@ -1,0 +1,9 @@
+prototype(Sitegeist.PaperTiger:ActionCollection.Preview.ContentCase) {
+    renderer >
+    renderer = afx`
+        <dl class="py-6 first:pt-0 first:border-t-0 border-t border-theme-front/20">
+            <dt class="font-bold text-xl">{props.label}</dt>
+            <dd class="pl-0">{props.preview}</dd>
+        </dl>
+    `
+}

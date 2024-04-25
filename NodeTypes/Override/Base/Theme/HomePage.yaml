@@ -1,0 +1,71 @@
+'Litespeed.Theme:Document.HomePage':
+  ui:
+    inspector:
+      groups:
+        papertiger:
+          label: 'Litespeed.PaperTiger:NodeTypes.Override.Base:paperTiger'
+          position: 500
+          icon: list-alt
+          tab: contact
+          collapsed: true
+  properties:
+    paperTigerMailerDsn:
+      type: string
+      ui:
+        label: 'Litespeed.PaperTiger:NodeTypes.Override.Base:mailerDSB'
+        help:
+          message: 'Litespeed.PaperTiger:NodeTypes.Override.Base:mailerDSB.help'
+        reloadIfChanged: true
+        inspector:
+          group: papertiger
+          position: 10
+    paperTigerRecipientAddress:
+      type: string
+      ui:
+        label: 'Litespeed.PaperTiger:NodeTypes.Override.Base:recipientAddress'
+        help:
+          message: 'Litespeed.PaperTiger:NodeTypes.Override.Base:recipientAddress.help'
+        reloadIfChanged: true
+        inspector:
+          group: papertiger
+          position: 20
+    paperTigerRecipientName:
+      type: string
+      ui:
+        label: 'Litespeed.PaperTiger:NodeTypes.Override.Base:recipientName'
+        help:
+          message: 'Litespeed.PaperTiger:NodeTypes.Override.Base:recipientName.help'
+        reloadIfChanged: true
+        inspector:
+          group: papertiger
+          position: 30
+    paperTigerSenderAddress:
+      type: string
+      ui:
+        label: 'Litespeed.PaperTiger:NodeTypes.Override.Base:senderAddress'
+        help:
+          message: 'Litespeed.PaperTiger:NodeTypes.Override.Base:senderAddress.help'
+        reloadIfChanged: true
+        inspector:
+          group: papertiger
+          position: 40
+    paperTigerSenderName:
+      type: string
+      ui:
+        label: 'Litespeed.PaperTiger:NodeTypes.Override.Base:senderName'
+        help:
+          message: 'Litespeed.PaperTiger:NodeTypes.Override.Base:senderName.help'
+        reloadIfChanged: true
+        inspector:
+          group: papertiger
+          position: 50
+    paperTigerSubject:
+      type: string
+      ui:
+        label: 'Litespeed.PaperTiger:NodeTypes.Override.Base:subject'
+        help:
+          message: 'Litespeed.PaperTiger:NodeTypes.Override.Base:subject.help'
+        reloadIfChanged: true
+        inspector:
+          group: papertiger
+          position: 60

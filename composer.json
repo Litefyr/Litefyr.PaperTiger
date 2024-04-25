@@ -1,0 +1,22 @@
+{
+  "name" : "litespeed/papertiger",
+  "description" : "Editable forms for Litespeed",
+  "type" : "neos-litespeed",
+  "license": "Unlicensed",
+  "require" : {
+    "sitegeist/papertiger": "^0.8",
+    "flowpack/nodetemplates": "^1.2",
+    "sitegeist/stonetablet": "^1.0.2",
+    "carbon/eel": "^2.15"
+  },
+  "autoload" : {
+    "psr-4" : {
+      "Litespeed\\PaperTiger\\" : "Classes/"
+    }
+  },
+  "keywords": [
+      "flow",
+      "neos",
+      "litespeed"
+  ]
+}

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2"
+    xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file product-name="Litespeed.PaperTiger" source-language="en" target-language="de" datatype="plaintext">
+        <body>
+            <trans-unit id="form" xml:space="preserve">
+                <source>Form</source>
+                <target>Formular</target>
+            </trans-unit>
+             <trans-unit id="paperTiger" xml:space="preserve">
+                <source>Paper Tiger</source>
+                <target>Paper Tiger</target>
+            </trans-unit>
+            <trans-unit id="mailerDSB" xml:space="preserve">
+                <source>Overwrite mailer DSN</source>
+                <target>Mailer DSN überschreiben</target>
+            </trans-unit>
+            <trans-unit id="mailerDSB.help" xml:space="preserve">
+                <source>You can use the DSN specification as it is [documented here by symfony](https://symfony.com/doc/current/mailer.html#transport-setup).</source>
+                <target>Sie können die DSN-Spezifikation verwenden, wie sie [hier von symfony dokumentiert](https://symfony.com/doc/current/mailer.html#transport-setup) ist.</target>
+            </trans-unit>
+            <trans-unit id="recipientAddress" xml:space="preserve">
+                <source>Overwrite recipient address</source>
+                <target>Empfängeradresse überschreiben</target>
+            </trans-unit>
+            <trans-unit id="recipientAddress.help" xml:space="preserve">
+                <source>The e-mail address to which the form data should be sent.</source>
+                <target>Die E-Mail-Adresse, an die die Formulardaten gesendet werden sollen.</target>
+            </trans-unit>
+            <trans-unit id="recipientName" xml:space="preserve">
+                <source>Overwrite recipient name</source>
+                <target>Empfängername überschreiben</target>
+            </trans-unit>
+            <trans-unit id="recipientName.help" xml:space="preserve">
+                <source>The name of the recipient to whom the form data should be sent.</source>
+                <target>Der Name des Empfängers, an den die Formulardaten gesendet werden sollen.</target>
+            </trans-unit>
+            <trans-unit id="senderAddress" xml:space="preserve">
+                <source>Overwrite sender address</source>
+                <target>Absenderadresse überschreiben</target>
+            </trans-unit>
+            <trans-unit id="senderAddress.help" xml:space="preserve">
+                <source>The e-mail address from which the form data should be sent.</source>
+                <target>Die E-Mail-Adresse, von der die Formulardaten gesendet werden sollen.</target>
+            </trans-unit>
+            <trans-unit id="senderName" xml:space="preserve">
+                <source>Overwrite sender name</source>
+                <target>Absendername überschreiben</target>
+            </trans-unit>
+            <trans-unit id="senderName.help" xml:space="preserve">
+                <source>The name of the sender from which the form data is to be sent. `{currentSiteName}` is replaced with the name of the website.</source>
+                <target>Der Name des Absenders, von dem die Formulardaten gesendet werden sollen. `{currentSiteName}` wird mit dem Namen der Webseite ersetzt.</target>
+            </trans-unit>
+            <trans-unit id="subject" xml:space="preserve">
+                <source>Overwrite subject</source>
+                <target>Betreff überschreiben</target>
+            </trans-unit>
+            <trans-unit id="subject.help" xml:space="preserve">
+                <source>The subject of the e-mail containing the form data. `{documentLabel}` is replaced with the name of the document.</source>
+                <target>Der Betreff der E-Mail, die die Formulardaten enthält. `{documentLabel}` wird mit dem Namen des Dokuments ersetzt.</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

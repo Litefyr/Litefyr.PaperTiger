@@ -1,0 +1,6 @@
+prototype(Litespeed.PaperTiger:Component.RecipientAddress) < prototype(Neos.Fusion:Component) {
+    value = ${q(node).property('recipientAddress')}
+    fromSite = ${q(site).property('paperTigerRecipientAddress') || q(site).property('email')}
+
+    renderer = ${props.value || props.fromSite}
+}

@@ -1,0 +1,4 @@
+Sitegeist.PaperTiger:Field.Honeypot:
+  abstract: true
+  ui:
+    inlineEditable: true

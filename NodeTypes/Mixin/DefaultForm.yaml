@@ -1,0 +1,88 @@
+'Litespeed.PaperTiger:Mixin.DefaultForm':
+  abstract: true
+  superTypes:
+    'Sitegeist.StoneTablet:Mixin.ExportableForm': true
+  ui:
+    inspector:
+      groups:
+        formsettings:
+          label: i18n
+          icon: paper-plane
+          position: 10
+  properties:
+    sendLabel:
+      type: string
+      ui:
+        label: i18n
+        reloadIfChanged: true
+        inspector:
+          group: formsettings
+          position: 10
+          editorOptions:
+            placeholder: 'Litespeed.PaperTiger:NodeTypes.Mixin.DefaultForm:properties.sendLabel.placeholder'
+    isExportable:
+      ui:
+        label: i18n
+        inspector:
+          group: formsettings
+          position: 15
+    formTitle:
+      ui:
+        label: i18n
+        inspector:
+          group: formsettings
+    excludedFields:
+      ui:
+        label: i18n
+        help:
+          message: i18n
+        inspector:
+          group: formsettings
+          editorOptions:
+            labels:
+              addItem: 'Litespeed.PaperTiger:NodeTypes.Mixin.DefaultForm:properties.excludedFields.addItem'
+  options:
+    template:
+      childNodes:
+        fields:
+          name: fields
+          childNodes:
+            fieldset:
+              type: Sitegeist.PaperTiger:Fieldset
+              properties:
+                label: "${I18n.translate('Litespeed.PaperTiger:NodeTypes.Mixin.DefaultForm:options.template.contact')}"
+              childNodes:
+                twoCols:
+                  type: 'Litespeed.PaperTiger:TwoCols'
+                  childNodes:
+                    name:
+                      type: 'Sitegeist.PaperTiger:Field.Text.SingleLine'
+                      properties:
+                        name: 'name'
+                        label: "${I18n.translate('Litespeed.PaperTiger:NodeTypes.Mixin.DefaultForm:options.template.name')}"
+                        isRequired: true
+                    email:
+                      type: 'Sitegeist.PaperTiger:Field.Email'
+                      properties:
+                        name: 'email'
+                        label: "${I18n.translate('Litespeed.PaperTiger:NodeTypes.Mixin.DefaultForm:options.template.email')}"
+                        isRequired: true
+                message:
+                  type: 'Sitegeist.PaperTiger:Field.Text.MultiLine'
+                  properties:
+                    name: 'message'
+                    label: "${I18n.translate('Litespeed.PaperTiger:NodeTypes.Mixin.DefaultForm:options.template.message')}"
+                    isRequired: true
+        actions:
+          name: actions
+          childNodes:
+            email:
+              type: 'Sitegeist.PaperTiger:Action.Email'
+              properties:
+                replyToAddress: '{email}'
+                attachUploads: true
+                plaintext: "${I18n.translate('Litespeed.PaperTiger:NodeTypes.Mixin.DefaultForm:options.template.action.email')}"
+            message:
+              type: 'Sitegeist.PaperTiger:Action.Message'
+              properties:
+                message: "${I18n.translate('Litespeed.PaperTiger:NodeTypes.Override.Sitegeist:options.template.message')}"

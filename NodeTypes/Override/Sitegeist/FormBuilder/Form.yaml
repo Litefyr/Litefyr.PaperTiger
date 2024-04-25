@@ -1,0 +1,52 @@
+'Sitegeist.PaperTiger:Form':
+  superTypes:
+    'Litespeed.PaperTiger:Mixin.DefaultForm': true
+    'Litespeed.Theme:Mixin.ThemeSelector': true
+    'Litespeed.Theme:Mixin.Breakout': true
+    'Litespeed.Theme:Mixin.TextWithContent': true
+    'Litespeed.Theme:Mixin.TextWithContent.Position': true
+    'Litespeed.Theme:Mixin.TextWithContent.LeftColSize': true
+    'Litespeed.Theme:Mixin.TextWithContent.Label': true
+    'Carbon.FirstElement:Mixin': true
+    'Litespeed.Disturber:Mixin.Content': true
+  ui:
+    label: 'Litespeed.PaperTiger:NodeTypes.Override.Sitegeist:form'
+    position: end
+    inspector:
+      groups:
+        look:
+          position: 40
+    creationDialog:
+      elements:
+        includeAnswerEmail:
+          type: boolean
+          ui:
+            label: 'Litespeed.PaperTiger:NodeTypes.Override.Sitegeist:addReplyToSender'
+  options:
+    template:
+      childNodes:
+        actions:
+          childNodes:
+            emailToSender:
+              when: '${data.includeAnswerEmail}'
+              type: 'Sitegeist.PaperTiger:Action.Email'
+              properties:
+                subject: "${I18n.translate('Litespeed.PaperTiger:NodeTypes.Override.Sitegeist:options.template.thankYouForMessage')}"
+                recipientAddress: '{email}'
+                recipientName: '{name}'
+                replyToAddress: ''
+                attachUploads: false
+                plaintext: "${I18n.translate('Litespeed.PaperTiger:NodeTypes.Override.Sitegeist:options.template.plaintext.sender')}"
+  properties:
+    textLeft:
+      defaultValue: true
+    breakout:
+      ui:
+        inspector:
+          hidden: 'ClientEval:node.properties.enableText ? false : true'
+    theme:
+      ui:
+        inspector:
+          editorOptions:
+            values:
+              gray: []

@@ -1,0 +1,4 @@
+prototype(Litespeed.PaperTiger:Attributes.Date) < prototype(Neos.Fusion:DataStructure) {
+    class = null
+    data-theme = null
+}

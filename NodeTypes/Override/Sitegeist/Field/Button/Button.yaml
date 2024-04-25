@@ -1,0 +1,5 @@
+Sitegeist.PaperTiger:Field.Button:
+  abstract: true
+  ui:
+    position: end
+    inlineEditable: true

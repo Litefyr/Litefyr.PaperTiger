@@ -1,0 +1,37 @@
+prototype(Neos.Fusion.Form:FieldContainer) {
+    tagName = 'div'
+    placeholder = null
+
+    errorClass = 'inputs:border-red-800'
+
+    needTagName = ${field.hasErrors() || props.label ? this.tagName : null}
+
+    renderer >
+    renderer = afx`
+        <Carbon.Eel:Tag
+            tagName={props.needTagName}
+            attributes.class={Tailwind.merge(props.class, (field.hasErrors() ? props.errorClass : null))}
+        >
+            <label @if={!props.label && props.placeholder} for={'field_' + field.getName()} class="sr-only">
+                {props.placeholder}
+            </label>
+            <Neos.Fusion:Renderer
+                @if={props.label}
+                type={props.labelRenderer}
+                element.for={field.getName()}
+                element.label={props.label}
+            />
+            <Neos.Fusion:Augmenter
+                @if={!props.needTagName}
+                {...props.attributes}
+                content={props.content}
+            />
+            {props.needTagName ? props.content : ""}
+            <Neos.Fusion:Renderer
+                @if={field.hasErrors()}
+                type={props.errorRenderer}
+                element.result={field.getResult()}
+            />
+        </Carbon.Eel:Tag>
+    `
+}

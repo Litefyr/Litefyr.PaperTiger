@@ -1,0 +1,3 @@
+prototype(Sitegeist.PaperTiger:Fieldset) {
+    legendClass = 'text-theme-front text-3xl pt-4'
+}

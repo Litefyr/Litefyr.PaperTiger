@@ -1,0 +1,8 @@
+Sitegeist.PaperTiger:Action.Redirect:
+  ui:
+    inlineEditable: true
+  properties:
+    uri:
+      ui:
+        inspector:
+          editor: Sitegeist.Archaeopteryx/Inspector/Editors/LinkEditor

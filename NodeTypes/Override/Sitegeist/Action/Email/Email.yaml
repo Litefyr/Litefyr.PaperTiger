@@ -1,0 +1,77 @@
+Sitegeist.PaperTiger:Action.Email:
+  ui:
+    icon: paper-plane
+    inlineEditable: true
+    inspector:
+      groups:
+        form:
+          icon: paper-plane
+        formoverride:
+          label: 'Litespeed.PaperTiger:NodeTypes.Override.Sitegeist:overwriteDefaultValues'
+          position: after form
+          icon: paper-plane
+          collapsed: true
+    creationDialog:
+      elements:
+        type:
+          type: string
+          defaultValue: website
+          ui:
+            label: 'Litespeed.PaperTiger:NodeTypes.Override.Sitegeist:template'
+            editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
+            editorOptions:
+              values:
+                website:
+                  label: 'Litespeed.PaperTiger:NodeTypes.Override.Sitegeist:template.website'
+                sender:
+                  label: 'Litespeed.PaperTiger:NodeTypes.Override.Sitegeist:template.sender'
+                none:
+                  label: 'Litespeed.PaperTiger:NodeTypes.Override.Sitegeist:template.none'
+  options:
+    template:
+      properties:
+        subject: "${data.type == 'sender' ? I18n.translate('Litespeed.PaperTiger:NodeTypes.Override.Sitegeist:options.template.thankYouForMessage') : ''}"
+        recipientAddress: '${data.type == "sender" ? "{email}" : ""}'
+        recipientName: '${data.type == "sender" ? "{name}" : ""}'
+        replyToAddress: '${data.type == "website" ? "{email}" : ""}'
+        attachUploads: '${data.type == "website" ? true : false}'
+        plaintext: "${data.type == 'none' ? '' : I18n.translate('Litespeed.PaperTiger:NodeTypes.Override.Sitegeist:options.template.plaintext.' + data.type)}"
+  properties:
+    subject:
+      ui:
+        reloadIfChanged: true
+        inspector:
+          group: formoverride
+          editorOptions:
+            required: false
+      validation: {}
+    format:
+      ui:
+        reloadIfChanged: true
+    recipientName:
+      ui:
+        reloadIfChanged: true
+        inspector:
+          group: formoverride
+    recipientAddress:
+      ui:
+        reloadIfChanged: true
+        inspector:
+          group: formoverride
+          position: after recipientName
+      validation: {}
+    senderAddress: []
+    senderName: []
+    replyToAddress:
+      ui:
+        reloadIfChanged: true
+    attachUploads:
+      ui:
+        reloadIfChanged: true
+    carbonCopyAddress:
+      ui:
+        reloadIfChanged: true
+    blindCarbonCopyAddress:
+      ui:
+        reloadIfChanged: true
+    testMode: []

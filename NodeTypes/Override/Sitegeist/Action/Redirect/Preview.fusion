@@ -1,0 +1,9 @@
+prototype(Sitegeist.PaperTiger:Action.Redirect.Preview) {
+    uri.@process {
+        convert = Neos.Neos:ConvertUris {
+            node = ${q(site).context({'workspaceName': 'live'}).get(0)}
+            forceConversion = true
+        }
+        wrap = afx`<a target="_blank" href={value}>{value}</a>`
+    }
+}

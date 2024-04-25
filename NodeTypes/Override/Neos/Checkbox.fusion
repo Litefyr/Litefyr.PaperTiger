@@ -1,0 +1,3 @@
+prototype(Neos.Fusion.Form:Checkbox) {
+    attributes = Litespeed.PaperTiger:Attributes.Checkbox
+}

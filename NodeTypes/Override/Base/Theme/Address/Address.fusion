@@ -1,0 +1,7 @@
+prototype(Litespeed.Presentation:Module.Address) {
+    form = Sitegeist.PaperTiger:Form {
+        @if.set = ${q(node).property('additionalPaperTiger')}
+        contentElement = false
+        inMultiColumn = true
+    }
+}

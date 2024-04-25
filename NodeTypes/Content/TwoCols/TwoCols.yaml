@@ -1,0 +1,16 @@
+Litespeed.PaperTiger:TwoCols:
+  superTypes:
+    'Neos.Neos:Content': true
+    'Sitegeist.PaperTiger:Field.Collection': true
+    'Sitegeist.PaperTiger:Field.Constraint': true
+  ui:
+    label: i18n
+    icon: columns
+    group: form.elements
+    position: 1300
+  constraints:
+    nodeTypes:
+      Litespeed.PaperTiger:TwoCols: false
+      Sitegeist.PaperTiger:Fieldset: false
+      Sitegeist.PaperTiger:Field.Hidden: false
+      Sitegeist.PaperTiger:Field.Honeypot: false

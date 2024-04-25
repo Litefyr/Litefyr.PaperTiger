@@ -1,0 +1,3 @@
+prototype(Sitegeist.PaperTiger:FieldCollection.Renderer) {
+    class = "text-theme-front *:mt-8"
+}

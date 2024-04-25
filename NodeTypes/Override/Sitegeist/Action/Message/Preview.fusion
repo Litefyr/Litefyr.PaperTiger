@@ -1,0 +1,6 @@
+prototype(Sitegeist.PaperTiger:Action.Message.Preview) {
+    message.@process.wrap = Neos.Fusion:Augmenter {
+        class = 'my-12 text-lg'
+        content = ${value}
+    }
+}

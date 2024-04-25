@@ -1,0 +1,27 @@
+prototype(Litespeed.PaperTiger:Presentation.EmailLink) < prototype(Neos.Fusion:Component) {
+    @propTypes {
+        email = ${PropTypes.string}
+        name = ${PropTypes.string}
+        showWarning = ${PropTypes.boolean}
+    }
+
+    showWarning = false
+
+    @private {
+        isValid = ${Carbon.String.isValidEmail(props.email)}
+        name = ${String.trim(props.name)}
+    }
+
+    renderer = afx`
+        <Carbon.Notification:Backend
+            @if={props.showWarning && !private.isValid}
+            content={Carbon.Backend.translate('backend.email.invalid', null, [props.content], 'Main', 'Litespeed.PaperTiger')}
+        />
+        <Neos.Fusion:Fragment @if={private.isValid || !props.showWarning}>
+            {private.name ? private.name + ' &lt;' : ''}
+            {!private.isValid ? props.email : ''}
+            <a @if={private.isValid} href={"mailto:" + props.email}>{props.email}</a>
+            {private.name ? '&gt;' : ''}
+        </Neos.Fusion:Fragment>
+    `
+}

@@ -1,0 +1,13 @@
+Sitegeist.PaperTiger:Field.TelephoneNumber:
+  ui:
+    inlineEditable: true
+  options:
+    template:
+      properties:
+        label: "${I18n.translate('Litespeed.PaperTiger:NodeTypes.Override.Sitegeist:telephone')}"
+  properties:
+    name:
+      defaultValue: telephone
+    label:
+      ui:
+        showInCreationDialog: false
