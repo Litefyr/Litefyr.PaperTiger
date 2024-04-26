@@ -4,7 +4,7 @@ prototype(Sitegeist.PaperTiger:Form) {
     theme = ${q(node).property('theme')}
     leftColSize = ${q(node).property('leftColSize')}
     textLeft = ${q(node).property('textLeft')}
-    links = Litespeed.Theme:Component.Links
+    links = Litespeed.Integration:Component.Links
 
     inMultiColumn = ${this.enableText}
 

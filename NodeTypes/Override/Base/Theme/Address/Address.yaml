@@ -1,4 +1,4 @@
-'Litespeed.Theme:Content.Address':
+'Litespeed.Integration:Content.Address':
   superTypes:
     'Litespeed.PaperTiger:Mixin.DefaultForm': true
   ui:

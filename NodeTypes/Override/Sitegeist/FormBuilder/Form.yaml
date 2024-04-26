@@ -1,12 +1,12 @@
 'Sitegeist.PaperTiger:Form':
   superTypes:
     'Litespeed.PaperTiger:Mixin.DefaultForm': true
-    'Litespeed.Theme:Mixin.ThemeSelector': true
-    'Litespeed.Theme:Mixin.Breakout': true
-    'Litespeed.Theme:Mixin.TextWithContent': true
-    'Litespeed.Theme:Mixin.TextWithContent.Position': true
-    'Litespeed.Theme:Mixin.TextWithContent.LeftColSize': true
-    'Litespeed.Theme:Mixin.TextWithContent.Label': true
+    'Litespeed.Integration:Mixin.ThemeSelector': true
+    'Litespeed.Integration:Mixin.Breakout': true
+    'Litespeed.Integration:Mixin.TextWithContent': true
+    'Litespeed.Integration:Mixin.TextWithContent.Position': true
+    'Litespeed.Integration:Mixin.TextWithContent.LeftColSize': true
+    'Litespeed.Integration:Mixin.TextWithContent.Label': true
     'Carbon.FirstElement:Mixin': true
     'Litespeed.Disturber:Mixin.Content': true
   ui:
