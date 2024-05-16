@@ -8,7 +8,7 @@ Sitegeist:
       - errareHumanumEst
       - time
 
-Base:
+Litefyr:
   PaperTiger:
     subject: 'Formular auf der Seite {documentLabel} wurde ausgefüllt'
     sender:
@@ -19,9 +19,9 @@ Neos:
   Neos:
     fusion:
       autoInclude:
-        Litespeed.PaperTiger: true
+        Litefyr.PaperTiger: true
     userInterface:
       translation:
         autoInclude:
-          Litespeed.PaperTiger:
+          Litefyr.PaperTiger:
             - 'NodeTypes/*'

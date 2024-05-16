@@ -1,6 +1,6 @@
-prototype(Litespeed.PaperTiger:Component.SenderAddress) < prototype(Neos.Fusion:Component) {
+prototype(Litefyr.PaperTiger:Component.SenderAddress) < prototype(Neos.Fusion:Component) {
     fromSite = ${q(site).property('paperTigerSenderAddress')}
-    fromConfiguration = ${Configuration.setting('Litespeed.PaperTiger.sender.address')}
+    fromConfiguration = ${Configuration.setting('Litefyr.PaperTiger.sender.address')}
 
     renderer = ${String.trim(props.fromSite) || String.trim(props.fromConfiguration)}
 }

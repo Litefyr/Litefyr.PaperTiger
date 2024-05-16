@@ -1,4 +1,4 @@
-prototype(Litespeed.PaperTiger:Attributes.Input) < prototype(Neos.Fusion:DataStructure) {
+prototype(Litefyr.PaperTiger:Attributes.Input) < prototype(Neos.Fusion:DataStructure) {
     class = null
     data-theme = null
 }

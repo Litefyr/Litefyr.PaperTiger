@@ -11,7 +11,7 @@ prototype(Sitegeist.PaperTiger:ActionCollection.Fieldnames) {
             <Neos.Fusion:Loop items={props.items}>
                 <button
                     x-tooltip
-                    :aria-label={Carbon.Backend.translate('fieldName.copy', null, [], 'NodeTypes/Override/Sitegeist', 'Litespeed.PaperTiger')}
+                    :aria-label={Carbon.Backend.translate('fieldName.copy', null, [], 'NodeTypes/Override/Sitegeist', 'Litefyr.PaperTiger')}
                     x-clipboard="$el.textContent"
                     type="button"
                 >

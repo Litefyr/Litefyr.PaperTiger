@@ -1,4 +1,4 @@
-prototype(Litespeed.PaperTiger:Presentation.HeadlineLabel) < prototype(Neos.Fusion:Component) {
+prototype(Litefyr.PaperTiger:Presentation.HeadlineLabel) < prototype(Neos.Fusion:Component) {
     @propTypes {
         class = ${PropTypes.anyOf( PropTypes.string, PropTypes.arrayOf( PropTypes.string ) )}
         label = ${PropTypes.string}

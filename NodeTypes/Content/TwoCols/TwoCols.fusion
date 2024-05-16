@@ -1,4 +1,4 @@
-prototype(Litespeed.PaperTiger:TwoCols) < prototype(Neos.Neos:ContentComponent) {
+prototype(Litefyr.PaperTiger:TwoCols) < prototype(Neos.Neos:ContentComponent) {
 
     renderer = Sitegeist.PaperTiger:FieldCollection.Renderer {
         nodePath = '.'

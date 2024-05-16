@@ -5,4 +5,4 @@ Sitegeist.PaperTiger:Mixin.Options:
         inspector:
           editorOptions:
             labels:
-              addItem: 'Litespeed.PaperTiger:NodeTypes.Override.Sitegeist:options.addItem'
+              addItem: 'Litefyr.PaperTiger:NodeTypes.Override.Sitegeist:options.addItem'

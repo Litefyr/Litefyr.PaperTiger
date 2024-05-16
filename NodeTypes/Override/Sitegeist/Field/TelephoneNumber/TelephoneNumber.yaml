@@ -4,7 +4,7 @@ Sitegeist.PaperTiger:Field.TelephoneNumber:
   options:
     template:
       properties:
-        label: "${I18n.translate('Litespeed.PaperTiger:NodeTypes.Override.Sitegeist:telephone')}"
+        label: "${I18n.translate('Litefyr.PaperTiger:NodeTypes.Override.Sitegeist:telephone')}"
   properties:
     name:
       defaultValue: telephone

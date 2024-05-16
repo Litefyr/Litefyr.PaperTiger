@@ -1,10 +1,10 @@
-prototype(Litespeed.PaperTiger:Component.SendButton) < prototype(Neos.Fusion:Component) {
+prototype(Litefyr.PaperTiger:Component.SendButton) < prototype(Neos.Fusion:Component) {
     appearance = ${q(node).closest('[theme]').property('theme') == 'main' ? 'minor' : 'main'}
     type = ${node.context.inBackend ? 'button' : 'submit'}
     content = ${String.trim(q(node).property('sendLabel')) || 'Senden'}
     class = 'mt-8'
 
-    renderer = Litespeed.Presentation:Atom.Button {
+    renderer = Litefyr.Presentation:Atom.Button {
         @apply.props = ${props}
     }
 }

@@ -7,7 +7,7 @@ Sitegeist.PaperTiger:Action.Email:
         form:
           icon: paper-plane
         formoverride:
-          label: 'Litespeed.PaperTiger:NodeTypes.Override.Sitegeist:overwriteDefaultValues'
+          label: 'Litefyr.PaperTiger:NodeTypes.Override.Sitegeist:overwriteDefaultValues'
           position: after form
           icon: paper-plane
           collapsed: true
@@ -17,25 +17,25 @@ Sitegeist.PaperTiger:Action.Email:
           type: string
           defaultValue: website
           ui:
-            label: 'Litespeed.PaperTiger:NodeTypes.Override.Sitegeist:template'
+            label: 'Litefyr.PaperTiger:NodeTypes.Override.Sitegeist:template'
             editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
             editorOptions:
               values:
                 website:
-                  label: 'Litespeed.PaperTiger:NodeTypes.Override.Sitegeist:template.website'
+                  label: 'Litefyr.PaperTiger:NodeTypes.Override.Sitegeist:template.website'
                 sender:
-                  label: 'Litespeed.PaperTiger:NodeTypes.Override.Sitegeist:template.sender'
+                  label: 'Litefyr.PaperTiger:NodeTypes.Override.Sitegeist:template.sender'
                 none:
-                  label: 'Litespeed.PaperTiger:NodeTypes.Override.Sitegeist:template.none'
+                  label: 'Litefyr.PaperTiger:NodeTypes.Override.Sitegeist:template.none'
   options:
     template:
       properties:
-        subject: "${data.type == 'sender' ? I18n.translate('Litespeed.PaperTiger:NodeTypes.Override.Sitegeist:options.template.thankYouForMessage') : ''}"
+        subject: "${data.type == 'sender' ? I18n.translate('Litefyr.PaperTiger:NodeTypes.Override.Sitegeist:options.template.thankYouForMessage') : ''}"
         recipientAddress: '${data.type == "sender" ? "{email}" : ""}'
         recipientName: '${data.type == "sender" ? "{name}" : ""}'
         replyToAddress: '${data.type == "website" ? "{email}" : ""}'
         attachUploads: '${data.type == "website" ? true : false}'
-        plaintext: "${data.type == 'none' ? '' : I18n.translate('Litespeed.PaperTiger:NodeTypes.Override.Sitegeist:options.template.plaintext.' + data.type)}"
+        plaintext: "${data.type == 'none' ? '' : I18n.translate('Litefyr.PaperTiger:NodeTypes.Override.Sitegeist:options.template.plaintext.' + data.type)}"
   properties:
     subject:
       ui:

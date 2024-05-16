@@ -4,7 +4,7 @@ prototype(Sitegeist.PaperTiger:Form) {
     theme = ${q(node).property('theme')}
     leftColSize = ${q(node).property('leftColSize')}
     textLeft = ${q(node).property('textLeft')}
-    links = Litespeed.Integration:Component.Links
+    links = Litefyr.Integration:Component.Links
 
     inMultiColumn = ${this.enableText}
 
@@ -65,14 +65,14 @@ prototype(Sitegeist.PaperTiger:Form) {
                     class="!hidden"
                 >
                     <Neos.Fusion.Form:FieldContainer
-                        label={Translation.translate('field.corpusDelicti', null, [], 'Main', 'Litespeed.PaperTiger')}
+                        label={Translation.translate('field.corpusDelicti', null, [], 'Main', 'Litefyr.PaperTiger')}
                         labelRenderer="Sitegeist.PaperTiger:Label"
                         field.name="corpusDelicti"
                     >
                         <Neos.Fusion.Form:Input attributes.autocomplete="off" attributes.tabindex="-1" attributes.id={'field_' + field.getName()} />
                     </Neos.Fusion.Form:FieldContainer>
                     <Neos.Fusion.Form:FieldContainer
-                        label={Translation.translate('field.errareHumanumEst', null, [], 'Main', 'Litespeed.PaperTiger')}
+                        label={Translation.translate('field.errareHumanumEst', null, [], 'Main', 'Litefyr.PaperTiger')}
                         labelRenderer="Sitegeist.PaperTiger:Label"
                         field.name="errareHumanumEst"
                     >
@@ -89,42 +89,42 @@ prototype(Sitegeist.PaperTiger:Form) {
                     />
                 </div>
             `
-            footer = Litespeed.PaperTiger:Component.SendButton
+            footer = Litefyr.PaperTiger:Component.SendButton
         }
     }
 
     // Backend rendering
     renderer.backend.renderer >
     renderer.backend.renderer = afx`
-        <Litespeed.Presentation:Spacing padding={!props.inMultiColumn}>
+        <Litefyr.Presentation:Spacing padding={!props.inMultiColumn}>
             <h2 class="border-b border-theme-front text-2xl text-theme-front mt-8 mb-4 pb-4 flex gap-4 items-center">
                 <span class="flex items-center justify-center bg-theme-front text-base text-theme-back rounded-full text-center min-w-8 min-h-8">1</span>
                 {Carbon.Backend.translate('form.formFields.header', null, [], 'Main', 'Sitegeist.PaperTiger')}
             </h2>
-        </Litespeed.Presentation:Spacing>
+        </Litefyr.Presentation:Spacing>
         <form class={_formClass}>
             <Sitegeist.PaperTiger:FieldCollection.Renderer nodePath="fields" />
-            <Litespeed.PaperTiger:Component.SendButton />
+            <Litefyr.PaperTiger:Component.SendButton />
         </form>
-        <Litespeed.Presentation:Spacing padding={!props.inMultiColumn} tailwind="text-theme-front">
+        <Litefyr.Presentation:Spacing padding={!props.inMultiColumn} tailwind="text-theme-front">
             <h2 class="border-b border-theme-front text-2xl text-theme-front mt-8 mb-4 pb-4 flex gap-4 items-center">
                 <span class="flex items-center justify-center bg-theme-front text-base text-theme-back rounded-full text-center min-w-8 min-h-8">2</span>
                 {Carbon.Backend.translate('form.followUpActions.header', null, [], 'Main', 'Sitegeist.PaperTiger')}
             </h2>
             <Sitegeist.PaperTiger:ActionCollection.Fieldnames nodePath="fields" />
             <Sitegeist.PaperTiger:ActionCollection.Preview nodePath="actions" attributes.class="prose" />
-        </Litespeed.Presentation:Spacing>
+        </Litefyr.Presentation:Spacing>
     `
 
     fileLoader = Carbon.FileLoader:Strategy.Attributes {
-        package = 'Litespeed.Presentation'
+        package = 'Litefyr.Presentation'
         js = 'Ajax.js'
         eventOnLoad = 'presentation:init'
     }
 
     renderer.@process {
         spacing = afx`
-            <Litespeed.Presentation:Spacing
+            <Litefyr.Presentation:Spacing
                 padding={!props.inMultiColumn}
                 waveSpacing={true}
                 class="w-full has-prose loading-indicator"
@@ -136,7 +136,7 @@ prototype(Sitegeist.PaperTiger:Form) {
         `
 
         // Add Text field
-        textField = Litespeed.Presentation:Module.TextWithContent {
+        textField = Litefyr.Presentation:Module.TextWithContent {
             @if.enable = ${props.enableText}
 
             align = 'start'

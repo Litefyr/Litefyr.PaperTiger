@@ -1,16 +1,16 @@
 'Sitegeist.PaperTiger:Form':
   superTypes:
-    'Litespeed.PaperTiger:Mixin.DefaultForm': true
-    'Litespeed.Integration:Mixin.ThemeSelector': true
-    'Litespeed.Integration:Mixin.Breakout': true
-    'Litespeed.Integration:Mixin.TextWithContent': true
-    'Litespeed.Integration:Mixin.TextWithContent.Position': true
-    'Litespeed.Integration:Mixin.TextWithContent.LeftColSize': true
-    'Litespeed.Integration:Mixin.TextWithContent.Label': true
+    'Litefyr.PaperTiger:Mixin.DefaultForm': true
+    'Litefyr.Integration:Mixin.ThemeSelector': true
+    'Litefyr.Integration:Mixin.Breakout': true
+    'Litefyr.Integration:Mixin.TextWithContent': true
+    'Litefyr.Integration:Mixin.TextWithContent.Position': true
+    'Litefyr.Integration:Mixin.TextWithContent.LeftColSize': true
+    'Litefyr.Integration:Mixin.TextWithContent.Label': true
     'Carbon.FirstElement:Mixin': true
-    'Litespeed.Disturber:Mixin.Content': true
+    'Litefyr.Disturber:Mixin.Content': true
   ui:
-    label: 'Litespeed.PaperTiger:NodeTypes.Override.Sitegeist:form'
+    label: 'Litefyr.PaperTiger:NodeTypes.Override.Sitegeist:form'
     position: end
     inspector:
       groups:
@@ -21,7 +21,7 @@
         includeAnswerEmail:
           type: boolean
           ui:
-            label: 'Litespeed.PaperTiger:NodeTypes.Override.Sitegeist:addReplyToSender'
+            label: 'Litefyr.PaperTiger:NodeTypes.Override.Sitegeist:addReplyToSender'
   options:
     template:
       childNodes:
@@ -31,12 +31,12 @@
               when: '${data.includeAnswerEmail}'
               type: 'Sitegeist.PaperTiger:Action.Email'
               properties:
-                subject: "${I18n.translate('Litespeed.PaperTiger:NodeTypes.Override.Sitegeist:options.template.thankYouForMessage')}"
+                subject: "${I18n.translate('Litefyr.PaperTiger:NodeTypes.Override.Sitegeist:options.template.thankYouForMessage')}"
                 recipientAddress: '{email}'
                 recipientName: '{name}'
                 replyToAddress: ''
                 attachUploads: false
-                plaintext: "${I18n.translate('Litespeed.PaperTiger:NodeTypes.Override.Sitegeist:options.template.plaintext.sender')}"
+                plaintext: "${I18n.translate('Litefyr.PaperTiger:NodeTypes.Override.Sitegeist:options.template.plaintext.sender')}"
   properties:
     textLeft:
       defaultValue: true

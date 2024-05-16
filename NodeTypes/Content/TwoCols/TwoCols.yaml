@@ -1,4 +1,4 @@
-Litespeed.PaperTiger:TwoCols:
+Litefyr.PaperTiger:TwoCols:
   superTypes:
     'Neos.Neos:Content': true
     'Sitegeist.PaperTiger:Field.Collection': true
@@ -10,7 +10,7 @@ Litespeed.PaperTiger:TwoCols:
     position: 1300
   constraints:
     nodeTypes:
-      Litespeed.PaperTiger:TwoCols: false
+      Litefyr.PaperTiger:TwoCols: false
       Sitegeist.PaperTiger:Fieldset: false
       Sitegeist.PaperTiger:Field.Hidden: false
       Sitegeist.PaperTiger:Field.Honeypot: false

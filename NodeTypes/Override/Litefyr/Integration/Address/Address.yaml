@@ -1,6 +1,6 @@
-'Litespeed.Integration:Content.Address':
+'Litefyr.Integration:Content.Address':
   superTypes:
-    'Litespeed.PaperTiger:Mixin.DefaultForm': true
+    'Litefyr.PaperTiger:Mixin.DefaultForm': true
   ui:
     inspector:
       groups:
@@ -31,7 +31,7 @@
     additionalPaperTiger:
       type: boolean
       ui:
-        label: 'Litespeed.PaperTiger:NodeTypes.Override.Base:form'
+        label: 'Litefyr.PaperTiger:NodeTypes.Override.Address:form'
         reloadPageIfChanged: true
         inspector:
           group: additionalContent

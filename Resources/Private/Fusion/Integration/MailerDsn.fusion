@@ -1,4 +1,4 @@
-prototype(Litespeed.PaperTiger:Component.MailerDsn) < prototype(Neos.Fusion:Component) {
+prototype(Litefyr.PaperTiger:Component.MailerDsn) < prototype(Neos.Fusion:Component) {
     fromSite = ${q(site).property('paperTigerMailerDsn')}
     fromConfiguration = ${Configuration.setting('Sitegeist.Neos.SymfonyMailer.dsn')}
 

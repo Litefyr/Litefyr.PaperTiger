@@ -1,2 +1,2 @@
 include: **/*.fusion
-include: nodetypes://Litespeed.PaperTiger/**/*.fusion
+include: nodetypes://Litefyr.PaperTiger/**/*.fusion

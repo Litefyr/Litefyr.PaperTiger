@@ -1,9 +1,9 @@
-'Litespeed.Integration:Document.HomePage':
+'Litefyr.Integration:Document.HomePage':
   ui:
     inspector:
       groups:
         papertiger:
-          label: 'Litespeed.PaperTiger:NodeTypes.Override.Base:paperTiger'
+          label: 'Litefyr.PaperTiger:NodeTypes.Override.HomePage:paperTiger'
           position: 500
           icon: list-alt
           tab: contact
@@ -12,9 +12,9 @@
     paperTigerMailerDsn:
       type: string
       ui:
-        label: 'Litespeed.PaperTiger:NodeTypes.Override.Base:mailerDSB'
+        label: 'Litefyr.PaperTiger:NodeTypes.Override.HomePage:mailerDSB'
         help:
-          message: 'Litespeed.PaperTiger:NodeTypes.Override.Base:mailerDSB.help'
+          message: 'Litefyr.PaperTiger:NodeTypes.Override.HomePage:mailerDSB.help'
         reloadIfChanged: true
         inspector:
           group: papertiger
@@ -22,9 +22,9 @@
     paperTigerRecipientAddress:
       type: string
       ui:
-        label: 'Litespeed.PaperTiger:NodeTypes.Override.Base:recipientAddress'
+        label: 'Litefyr.PaperTiger:NodeTypes.Override.HomePage:recipientAddress'
         help:
-          message: 'Litespeed.PaperTiger:NodeTypes.Override.Base:recipientAddress.help'
+          message: 'Litefyr.PaperTiger:NodeTypes.Override.HomePage:recipientAddress.help'
         reloadIfChanged: true
         inspector:
           group: papertiger
@@ -32,9 +32,9 @@
     paperTigerRecipientName:
       type: string
       ui:
-        label: 'Litespeed.PaperTiger:NodeTypes.Override.Base:recipientName'
+        label: 'Litefyr.PaperTiger:NodeTypes.Override.HomePage:recipientName'
         help:
-          message: 'Litespeed.PaperTiger:NodeTypes.Override.Base:recipientName.help'
+          message: 'Litefyr.PaperTiger:NodeTypes.Override.HomePage:recipientName.help'
         reloadIfChanged: true
         inspector:
           group: papertiger
@@ -42,9 +42,9 @@
     paperTigerSenderAddress:
       type: string
       ui:
-        label: 'Litespeed.PaperTiger:NodeTypes.Override.Base:senderAddress'
+        label: 'Litefyr.PaperTiger:NodeTypes.Override.HomePage:senderAddress'
         help:
-          message: 'Litespeed.PaperTiger:NodeTypes.Override.Base:senderAddress.help'
+          message: 'Litefyr.PaperTiger:NodeTypes.Override.HomePage:senderAddress.help'
         reloadIfChanged: true
         inspector:
           group: papertiger
@@ -52,9 +52,9 @@
     paperTigerSenderName:
       type: string
       ui:
-        label: 'Litespeed.PaperTiger:NodeTypes.Override.Base:senderName'
+        label: 'Litefyr.PaperTiger:NodeTypes.Override.HomePage:senderName'
         help:
-          message: 'Litespeed.PaperTiger:NodeTypes.Override.Base:senderName.help'
+          message: 'Litefyr.PaperTiger:NodeTypes.Override.HomePage:senderName.help'
         reloadIfChanged: true
         inspector:
           group: papertiger
@@ -62,9 +62,9 @@
     paperTigerSubject:
       type: string
       ui:
-        label: 'Litespeed.PaperTiger:NodeTypes.Override.Base:subject'
+        label: 'Litefyr.PaperTiger:NodeTypes.Override.HomePage:subject'
         help:
-          message: 'Litespeed.PaperTiger:NodeTypes.Override.Base:subject.help'
+          message: 'Litefyr.PaperTiger:NodeTypes.Override.HomePage:subject.help'
         reloadIfChanged: true
         inspector:
           group: papertiger

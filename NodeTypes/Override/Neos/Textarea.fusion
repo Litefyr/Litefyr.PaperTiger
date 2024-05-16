@@ -1,5 +1,5 @@
 prototype(Neos.Fusion.Form:Textarea) {
-    attributes = Litespeed.PaperTiger:Attributes.Textarea {
+    attributes = Litefyr.PaperTiger:Attributes.Textarea {
         id = ${'field_' + field.getName()}
     }
 }

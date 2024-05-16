@@ -1,4 +1,4 @@
-prototype(Litespeed.PaperTiger:Component.HeadlineLabel) < prototype(Litespeed.PaperTiger:Presentation.HeadlineLabel) {
+prototype(Litefyr.PaperTiger:Component.HeadlineLabel) < prototype(Litefyr.PaperTiger:Presentation.HeadlineLabel) {
     label = ${q(node).property('label')}
     isRequired = ${q(node).property('isRequired')}
 }

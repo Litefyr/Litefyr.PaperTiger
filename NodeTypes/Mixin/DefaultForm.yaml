@@ -1,4 +1,4 @@
-'Litespeed.PaperTiger:Mixin.DefaultForm':
+'Litefyr.PaperTiger:Mixin.DefaultForm':
   abstract: true
   superTypes:
     'Sitegeist.StoneTablet:Mixin.ExportableForm': true
@@ -19,7 +19,7 @@
           group: formsettings
           position: 10
           editorOptions:
-            placeholder: 'Litespeed.PaperTiger:NodeTypes.Mixin.DefaultForm:properties.sendLabel.placeholder'
+            placeholder: 'Litefyr.PaperTiger:NodeTypes.Mixin.DefaultForm:properties.sendLabel.placeholder'
     isExportable:
       ui:
         label: i18n
@@ -40,7 +40,7 @@
           group: formsettings
           editorOptions:
             labels:
-              addItem: 'Litespeed.PaperTiger:NodeTypes.Mixin.DefaultForm:properties.excludedFields.addItem'
+              addItem: 'Litefyr.PaperTiger:NodeTypes.Mixin.DefaultForm:properties.excludedFields.addItem'
   options:
     template:
       childNodes:
@@ -50,28 +50,28 @@
             fieldset:
               type: Sitegeist.PaperTiger:Fieldset
               properties:
-                label: "${I18n.translate('Litespeed.PaperTiger:NodeTypes.Mixin.DefaultForm:options.template.contact')}"
+                label: "${I18n.translate('Litefyr.PaperTiger:NodeTypes.Mixin.DefaultForm:options.template.contact')}"
               childNodes:
                 twoCols:
-                  type: 'Litespeed.PaperTiger:TwoCols'
+                  type: 'Litefyr.PaperTiger:TwoCols'
                   childNodes:
                     name:
                       type: 'Sitegeist.PaperTiger:Field.Text.SingleLine'
                       properties:
                         name: 'name'
-                        label: "${I18n.translate('Litespeed.PaperTiger:NodeTypes.Mixin.DefaultForm:options.template.name')}"
+                        label: "${I18n.translate('Litefyr.PaperTiger:NodeTypes.Mixin.DefaultForm:options.template.name')}"
                         isRequired: true
                     email:
                       type: 'Sitegeist.PaperTiger:Field.Email'
                       properties:
                         name: 'email'
-                        label: "${I18n.translate('Litespeed.PaperTiger:NodeTypes.Mixin.DefaultForm:options.template.email')}"
+                        label: "${I18n.translate('Litefyr.PaperTiger:NodeTypes.Mixin.DefaultForm:options.template.email')}"
                         isRequired: true
                 message:
                   type: 'Sitegeist.PaperTiger:Field.Text.MultiLine'
                   properties:
                     name: 'message'
-                    label: "${I18n.translate('Litespeed.PaperTiger:NodeTypes.Mixin.DefaultForm:options.template.message')}"
+                    label: "${I18n.translate('Litefyr.PaperTiger:NodeTypes.Mixin.DefaultForm:options.template.message')}"
                     isRequired: true
         actions:
           name: actions
@@ -81,8 +81,8 @@
               properties:
                 replyToAddress: '{email}'
                 attachUploads: true
-                plaintext: "${I18n.translate('Litespeed.PaperTiger:NodeTypes.Mixin.DefaultForm:options.template.action.email')}"
+                plaintext: "${I18n.translate('Litefyr.PaperTiger:NodeTypes.Mixin.DefaultForm:options.template.action.email')}"
             message:
               type: 'Sitegeist.PaperTiger:Action.Message'
               properties:
-                message: "${I18n.translate('Litespeed.PaperTiger:NodeTypes.Override.Sitegeist:options.template.message')}"
+                message: "${I18n.translate('Litefyr.PaperTiger:NodeTypes.Override.Sitegeist:options.template.message')}"

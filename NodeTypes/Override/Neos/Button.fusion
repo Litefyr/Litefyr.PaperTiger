@@ -3,7 +3,7 @@
     type = 'submit'
     renderer >
     renderer = afx`
-        <Litespeed.Presentation:Atom.Button
+        <Litefyr.Presentation:Atom.Button
             name={field.getName()}
             value={field.getTargetValueStringified() || null}
             type={props.type}

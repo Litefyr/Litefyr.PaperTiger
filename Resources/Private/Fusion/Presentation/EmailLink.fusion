@@ -1,4 +1,4 @@
-prototype(Litespeed.PaperTiger:Presentation.EmailLink) < prototype(Neos.Fusion:Component) {
+prototype(Litefyr.PaperTiger:Presentation.EmailLink) < prototype(Neos.Fusion:Component) {
     @propTypes {
         email = ${PropTypes.string}
         name = ${PropTypes.string}
@@ -15,7 +15,7 @@ prototype(Litespeed.PaperTiger:Presentation.EmailLink) < prototype(Neos.Fusion:C
     renderer = afx`
         <Carbon.Notification:Backend
             @if={props.showWarning && !private.isValid}
-            content={Carbon.Backend.translate('backend.email.invalid', null, [props.content], 'Main', 'Litespeed.PaperTiger')}
+            content={Carbon.Backend.translate('backend.email.invalid', null, [props.content], 'Main', 'Litefyr.PaperTiger')}
         />
         <Neos.Fusion:Fragment @if={private.isValid || !props.showWarning}>
             {private.name ? private.name + ' &lt;' : ''}

@@ -1,6 +1,6 @@
-prototype(Litespeed.PaperTiger:Component.SenderName) < prototype(Neos.Fusion:Component) {
+prototype(Litefyr.PaperTiger:Component.SenderName) < prototype(Neos.Fusion:Component) {
     fromSite = ${q(site).property('paperTigerSenderName')}
-    fromConfiguration = ${Configuration.setting('Litespeed.PaperTiger.sender.name')}
+    fromConfiguration = ${Configuration.setting('Litefyr.PaperTiger.sender.name')}
     currentSiteName = ${site.context.currentSite.name}
 
     renderer = ${String.replace(String.trim(props.fromSite) || String.trim(props.fromConfiguration), '{currentSiteName}' , props.currentSiteName)}

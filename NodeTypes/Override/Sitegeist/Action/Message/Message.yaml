@@ -4,4 +4,4 @@ Sitegeist.PaperTiger:Action.Message:
   options:
     template:
       properties:
-        message: "${I18n.translate('Litespeed.PaperTiger:NodeTypes.Override.Sitegeist:options.template.message')}"
+        message: "${I18n.translate('Litefyr.PaperTiger:NodeTypes.Override.Sitegeist:options.template.message')}"

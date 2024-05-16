@@ -1,7 +1,7 @@
-prototype(Litespeed.PaperTiger:Component.Subject) < prototype(Neos.Fusion:Component) {
+prototype(Litefyr.PaperTiger:Component.Subject) < prototype(Neos.Fusion:Component) {
     value = ${q(node).property('subject')}
     fromSite = ${q(site).property('paperTigerSubject')}
-    fromConfiguration = ${Configuration.setting('Litespeed.PaperTiger.subject')}
+    fromConfiguration = ${Configuration.setting('Litefyr.PaperTiger.subject')}
     documentLabel = ${documentNode.label}
 
     renderer = ${String.replace(String.trim(props.value) || String.trim(props.fromSite) || String.trim(props.fromConfiguration), '{documentLabel}' , props.documentLabel)}

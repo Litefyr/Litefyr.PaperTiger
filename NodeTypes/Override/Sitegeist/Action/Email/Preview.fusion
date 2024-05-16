@@ -1,14 +1,14 @@
 prototype(Sitegeist.PaperTiger:Action.Email.Preview) {
-    senderAddress = Litespeed.PaperTiger:Component.SenderAddress
-    senderName = Litespeed.PaperTiger:Component.SenderName
-    subject = Litespeed.PaperTiger:Component.Subject
-    recipientAddress = Litespeed.PaperTiger:Component.RecipientAddress
-    recipientName = Litespeed.PaperTiger:Component.RecipientName
+    senderAddress = Litefyr.PaperTiger:Component.SenderAddress
+    senderName = Litefyr.PaperTiger:Component.SenderName
+    subject = Litefyr.PaperTiger:Component.Subject
+    recipientAddress = Litefyr.PaperTiger:Component.RecipientAddress
+    recipientName = Litefyr.PaperTiger:Component.RecipientName
     attachUploads = ${q(node).property('attachUploads')}
-    dsn = Litespeed.PaperTiger:Component.MailerDsn
+    dsn = Litefyr.PaperTiger:Component.MailerDsn
 
     renderer >
-    renderer = afx`<Litespeed.PaperTiger:Presentation.Action.Email.Preview {...props} />`
+    renderer = afx`<Litefyr.PaperTiger:Presentation.Action.Email.Preview {...props} />`
 
     @cache {
         mode = 'cached'

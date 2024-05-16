@@ -1,7 +1,7 @@
 {
-  "name" : "lspeed/papertiger",
-  "description" : "Editable forms for Litespeed",
-  "type" : "neos-litespeed",
+  "name" : "litefyr/papertiger",
+  "description" : "Editable forms for Litefyr",
+  "type" : "neos-litefyr",
   "license": "Unlicensed",
   "require" : {
     "sitegeist/papertiger": "^0.8",
@@ -11,12 +11,12 @@
   },
   "autoload" : {
     "psr-4" : {
-      "Litespeed\\PaperTiger\\" : "Classes/"
+      "Litefyr\\PaperTiger\\" : "Classes/"
     }
   },
   "keywords": [
       "flow",
       "neos",
-      "litespeed"
+      "litefyr"
   ]
 }

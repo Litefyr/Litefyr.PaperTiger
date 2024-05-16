@@ -1,18 +1,18 @@
 prototype(Sitegeist.PaperTiger:Action.Email.Definition) {
     replyToAddress.@process.asTemplate = Sitegeist.PaperTiger:Action.DataTemplate
 
-    senderAddress = Litespeed.PaperTiger:Component.SenderAddress
-    senderName = Litespeed.PaperTiger:Component.SenderName {
+    senderAddress = Litefyr.PaperTiger:Component.SenderAddress
+    senderName = Litefyr.PaperTiger:Component.SenderName {
         @process.asTemplate = Sitegeist.PaperTiger:Action.DataTemplate
     }
-    subject = Litespeed.PaperTiger:Component.Subject
-    recipientAddress = Litespeed.PaperTiger:Component.RecipientAddress {
+    subject = Litefyr.PaperTiger:Component.Subject
+    recipientAddress = Litefyr.PaperTiger:Component.RecipientAddress {
         @process.asTemplate = Sitegeist.PaperTiger:Action.DataTemplate
     }
-    recipientName = Litespeed.PaperTiger:Component.RecipientName {
+    recipientName = Litefyr.PaperTiger:Component.RecipientName {
         @process.asTemplate = Sitegeist.PaperTiger:Action.DataTemplate
     }
 
-    dsn = Litespeed.PaperTiger:Component.MailerDsn
+    dsn = Litefyr.PaperTiger:Component.MailerDsn
     renderer.options.dsn = ${props.dsn}
 }

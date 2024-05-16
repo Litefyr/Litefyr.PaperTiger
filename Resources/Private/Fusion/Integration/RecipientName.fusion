@@ -1,4 +1,4 @@
-prototype(Litespeed.PaperTiger:Component.RecipientName) < prototype(Neos.Fusion:Component) {
+prototype(Litefyr.PaperTiger:Component.RecipientName) < prototype(Neos.Fusion:Component) {
     value = ${q(node).property('recipientName')}
     fromSite = ${q(site).property('paperTigerRecipientName') || q(site).property('addressName') || q(site).property('legalName') || site.context.currentSite.name}
 
