@@ -2,7 +2,7 @@
   "name" : "litefyr/papertiger",
   "description" : "Editable forms for Litefyr",
   "type" : "neos-litefyr",
-  "license": "Unlicensed",
+  "license": "GPL-3.0-or-later",
   "require" : {
     "sitegeist/papertiger": "^0.8",
     "flowpack/nodetemplates": "^1.2",
