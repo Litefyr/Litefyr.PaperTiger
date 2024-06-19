@@ -11,6 +11,8 @@
   properties:
     paperTigerMailerDsn:
       type: string
+      search:
+        indexing: false
       ui:
         label: 'Litefyr.PaperTiger:NodeTypes.Override.HomePage:mailerDSB'
         help:
@@ -21,6 +23,8 @@
           position: 10
     paperTigerRecipientAddress:
       type: string
+      search:
+        indexing: false
       ui:
         label: 'Litefyr.PaperTiger:NodeTypes.Override.HomePage:recipientAddress'
         help:
@@ -31,6 +35,8 @@
           position: 20
     paperTigerRecipientName:
       type: string
+      search:
+        indexing: false
       ui:
         label: 'Litefyr.PaperTiger:NodeTypes.Override.HomePage:recipientName'
         help:
@@ -41,6 +47,8 @@
           position: 30
     paperTigerSenderAddress:
       type: string
+      search:
+        indexing: false
       ui:
         label: 'Litefyr.PaperTiger:NodeTypes.Override.HomePage:senderAddress'
         help:
@@ -51,6 +59,8 @@
           position: 40
     paperTigerSenderName:
       type: string
+      search:
+        indexing: false
       ui:
         label: 'Litefyr.PaperTiger:NodeTypes.Override.HomePage:senderName'
         help:
@@ -61,6 +71,8 @@
           position: 50
     paperTigerSubject:
       type: string
+      search:
+        indexing: false
       ui:
         label: 'Litefyr.PaperTiger:NodeTypes.Override.HomePage:subject'
         help:
