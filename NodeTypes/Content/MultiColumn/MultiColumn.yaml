@@ -1,0 +1,38 @@
+Litefyr.PaperTiger:MultiColumn:
+  superTypes:
+    'Neos.Neos:Content': true
+    'Sitegeist.PaperTiger:Field.Collection': true
+    'Sitegeist.PaperTiger:Field.Constraint': true
+  ui:
+    label: i18n
+    icon: columns
+    group: form.elements
+    position: 1300
+    inspector:
+      groups:
+        look:
+          label: i18n
+          icon: columns
+          position: 10
+  constraints:
+    nodeTypes:
+      Litefyr.PaperTiger:MultiColumn: false
+      Sitegeist.PaperTiger:Fieldset: false
+      Sitegeist.PaperTiger:Field.Hidden: false
+      Sitegeist.PaperTiger:Field.Honeypot: false
+  properties:
+    columns:
+      type: integer
+      defaultValue: 2
+      search:
+        indexing: false
+      ui:
+        label: i18n
+        showInCreationDialog: true
+        reloadIfChanged: true
+        inspector:
+          group: look
+          editor: 'Carbon.RangeEditor/Editor'
+          editorOptions:
+            min: 2
+            max: 6

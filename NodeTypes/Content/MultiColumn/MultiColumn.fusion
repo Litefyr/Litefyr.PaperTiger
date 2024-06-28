@@ -1,0 +1,27 @@
+prototype(Litefyr.PaperTiger:MultiColumn) < prototype(Neos.Neos:ContentComponent) {
+
+    columns = ${q(node).property('columns') || 2}
+
+    renderer = afx`
+        <div
+            class="@container grid gap-x-12 grid-cols-dynamic grid-flow-row items-start *:col-span-dynamic *:@md:col-span-1 !my-0 *:mt-8"
+            style={'--grid-cols:' + props.columns + ';--col-span:' + props.columns}
+        >
+            <Neos.Neos:ContentCollectionRenderer />
+        </div>
+    `
+
+    @cache {
+        mode = 'cached'
+        entryIdentifier {
+            collection = ${node}
+        }
+        entryTags {
+            1 = ${Neos.Caching.descendantOfTag(node)}
+            2 = ${Neos.Caching.nodeTag(node)}
+        }
+        maximumLifetime = ${q(node).context({'invisibleContentShown': true}).children().cacheLifetime()}
+    }
+
+    @exceptionHandler = 'Neos\\Neos\\Fusion\\ExceptionHandlers\\NodeWrappingHandler'
+}

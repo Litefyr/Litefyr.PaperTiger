@@ -1,0 +1,30 @@
+up:
+  comments: 'Migrate TwoCols to MultiColumn'
+  migration:
+    - filters:
+        - type: NodeType
+          settings:
+            nodeType: 'Litefyr.PaperTiger:TwoCols'
+      transformations:
+        - type: ChangeNodeType
+          settings:
+            newType: 'Litefyr.PaperTiger:MultiColumn'
+        - type: AddNewProperty
+          settings:
+            newPropertyName: columns
+            value: 2
+
+down:
+  comments: 'Migrate MultiColumn back to TwoCols'
+  migration:
+    - filters:
+        - type: NodeType
+          settings:
+            nodeType: 'Litefyr.PaperTiger:MultiColumn'
+      transformations:
+        - type: ChangeNodeType
+          settings:
+            newType: 'Litefyr.PaperTiger:TwoCols'
+        - type: RemoveProperty
+          settings:
+            property: columns
