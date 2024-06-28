@@ -65,6 +65,10 @@ vielen Dank für Ihre Nachricht. Wir werden uns schnellstmöglich bei Ihnen meld
                 <source>'Copy ' + $el.textContent + ' to the clipboard'</source>
                 <target>'Kopiere '+$el.textContent+' in die Zwischenablage'</target>
             </trans-unit>
+            <trans-unit id="date.useRelativeMinMax" xml:space="preserve">
+                <source>Use relative date</source>
+                <target>Relatives Datum verwenden</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

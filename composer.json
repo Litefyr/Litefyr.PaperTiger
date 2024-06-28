@@ -7,6 +7,7 @@
     "sitegeist/papertiger": "^0.8",
     "flowpack/nodetemplates": "^1.2",
     "sitegeist/stonetablet": "^1.0.2",
+    "carbon/editor-relativedate": "^0.1.0",
     "carbon/eel": "^2.15"
   },
   "autoload" : {

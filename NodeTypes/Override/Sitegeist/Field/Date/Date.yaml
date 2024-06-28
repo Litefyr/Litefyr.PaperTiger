@@ -1,3 +1,37 @@
 Sitegeist.PaperTiger:Field.Date:
   ui:
     inlineEditable: true
+  properties:
+    useRelativeMinMax:
+      type: boolean
+      ui:
+        label: 'Litefyr.PaperTiger:NodeTypes.Override.Sitegeist:date.useRelativeMinMax'
+        inspector:
+          group: form
+          position: 'before earliestDate'
+    relativeEarliestDate:
+      type: array
+      ui:
+        label: 'Sitegeist.PaperTiger:NodeTypes.Field.Date:properties.earliestDate'
+        inspector:
+          hidden: 'ClientEval: !node.properties.useRelativeMinMax'
+          group: form
+          position: 'after useRelativeMinMax'
+          editor: 'Carbon.Editor/RelativeDate'
+    relativeLatestDate:
+      type: array
+      ui:
+        label: 'Sitegeist.PaperTiger:NodeTypes.Field.Date:properties.latestDate'
+        inspector:
+          hidden: 'ClientEval: !node.properties.useRelativeMinMax'
+          group: form
+          position: 'after relativeEarliestDate'
+          editor: 'Carbon.Editor/RelativeDate'
+    earliestDate:
+      ui:
+        inspector:
+          hidden: 'ClientEval: !!node.properties.useRelativeMinMax'
+    latestDate:
+      ui:
+        inspector:
+          hidden: 'ClientEval: !!node.properties.useRelativeMinMax'

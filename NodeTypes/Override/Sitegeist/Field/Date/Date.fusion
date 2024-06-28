@@ -1,4 +1,35 @@
-prototype(Sitegeist.PaperTiger:Field.Date) {
+prototype(Sitegeist.PaperTiger:Field.Date) < prototype(Neos.Neos:ContentComponent) {
     placeholder.@process.required = ${this.isRequired && !this.label ? value + ' *' : value}
-    renderer.placeholder = ${props.placeholder}
+
+    useRelativeMinMax = ${q(node).property('useRelativeMinMax')}
+    earliestDate.@if.set = ${!this.useRelativeMinMax}
+    latestDate.@if.set = ${!this.useRelativeMinMax}
+
+    relativeEarliestDate = ${q(node).property('relativeEarliestDate')}
+    relativeEarliestDate.@if.set = ${this.useRelativeMinMax}
+    relativeLatestDate = ${q(node).property('relativeLatestDate')}
+    relativeLatestDate.@if.set = ${this.useRelativeMinMax}
+
+    @private {
+        relativeDate = Neos.Fusion:DataStructure {
+            earliest = ${props.relativeEarliestDate}
+            latest = ${props.relativeLatestDate}
+        }
+        fileLoader = Carbon.FileLoader:Strategy.Attributes {
+            @if.hasRelativeDate = ${props.relativeEarliestDate || props.relativeLatestDate}
+            package = 'Litefyr.PaperTiger'
+            eventOnLoad = 'papertiger-relativedate:init'
+            js = 'RelativeDate.js'
+        }
+    }
+
+    renderer {
+        placeholder = ${props.placeholder || null}
+        content.attributes {
+            @apply.file = ${private.fileLoader}
+            x-data = ${private.relativeDate ? AlpineJS.function('relativeDate', private.relativeDate) : null}
+            :min = ${props.relativeEarliestDate ? 'min' : null}
+            :max = ${props.relativeLatestDate ? 'max' : null}
+        }
+    }
 }
