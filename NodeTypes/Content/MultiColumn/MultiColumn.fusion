@@ -2,10 +2,17 @@ prototype(Litefyr.PaperTiger:MultiColumn) < prototype(Neos.Neos:ContentComponent
 
     columns = ${q(node).property('columns') || 2}
 
+    prototype(Neos.Neos:ContentComponent) {
+        @process.addClassAndStyle = Neos.Fusion:Augmenter {
+            class = 'col-span-1 @md:col-span-dynamic mt-8'
+            style = ${'--col-span:' + (q(node).property('columns') || 1)}
+        }
+    }
+
     renderer = afx`
         <div
-            class="@container grid gap-x-12 grid-cols-dynamic grid-flow-row items-start *:col-span-dynamic *:@md:col-span-1 !my-0 *:mt-8"
-            style={'--grid-cols:' + props.columns + ';--col-span:' + props.columns}
+            class="grid grid-cols-1 grid-flow-row items-start !my-0 gap-x-4 @md:grid-cols-dynamic @3xl:gap-x-8"
+            style={'--grid-cols:' + props.columns}
         >
             <Neos.Neos:ContentCollectionRenderer />
         </div>

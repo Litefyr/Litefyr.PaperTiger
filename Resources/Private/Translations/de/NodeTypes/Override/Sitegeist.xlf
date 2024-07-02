@@ -69,6 +69,10 @@ vielen Dank für Ihre Nachricht. Wir werden uns schnellstmöglich bei Ihnen meld
                 <source>Use relative date</source>
                 <target>Relatives Datum verwenden</target>
             </trans-unit>
+            <trans-unit id="field.columns" xml:space="preserve">
+                <source>Column width</source>
+                <target>Spaltenbreite</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

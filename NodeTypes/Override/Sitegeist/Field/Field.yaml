@@ -1,0 +1,17 @@
+Sitegeist.PaperTiger:Field:
+  properties:
+    columns:
+      type: integer
+      defaultValue: 1
+      ui:
+        label: 'Litefyr.PaperTiger:NodeTypes.Override.Sitegeist:field.columns'
+        reloadIfChanged: true
+        inspector:
+          group: form
+          position: end
+          editor: 'Carbon.RangeEditor/Editor'
+          hidden: 'ClientEval: parentNode?.nodeType != "Litefyr.PaperTiger:MultiColumn"'
+          editorOptions:
+            min: 1
+            max: 'ClientEval: parentNode?.properties?.columns || 1'
+            step: 1

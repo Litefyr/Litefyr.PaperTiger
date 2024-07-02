@@ -1,21 +1,20 @@
 prototype(Sitegeist.PaperTiger:Field.Date.Schema) {
     dateRangeValidatorOptions >
     dateRangeValidatorOptions = Neos.Fusion:Case {
+        @process {
+            filter = ${Array.filter(value)}
+            toString = ${Array.map(value, item => Date.format(item, 'Y-m-d'))}
+        }
         useRelativeMinMax {
             condition = ${q(node).property('useRelativeMinMax')}
             renderer = Neos.Fusion:DataStructure {
-                @process.filter = ${Array.filter(value)}
-                earliestDate = ${q(node).property('relativeEarliestDate')}
-                earliestDate.@process.getDate = ${Carbon.RelativeDate.getDate(value)}
-
-                latestDate = ${q(node).property('relativeLatestDate')}
-                latestDate.@process.getDate = ${Carbon.RelativeDate.getDate(value)}
+                earliestDate = ${Carbon.RelativeDate.getDate(q(node).property('relativeEarliestDate'))}
+                latestDate = ${Carbon.RelativeDate.getDate(q(node).property('relativeLatestDate'))}
             }
         }
         default {
             condition = true
             renderer = Neos.Fusion:DataStructure {
-                @process.filter = ${Array.filter(value)}
                 earliestDate = ${q(node).property('earliestDate')}
                 latestDate = ${q(node).property('latestDate')}
             }

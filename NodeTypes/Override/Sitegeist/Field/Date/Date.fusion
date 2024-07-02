@@ -10,6 +10,11 @@ prototype(Sitegeist.PaperTiger:Field.Date) < prototype(Neos.Neos:ContentComponen
     relativeLatestDate = ${q(node).property('relativeLatestDate')}
     relativeLatestDate.@if.set = ${this.useRelativeMinMax}
 
+    // Dirty hack to remove the time from validation error messages
+    prototype(Neos.Fusion.Form:ErrorRenderer) {
+        renderer.@process.removeTime = ${value ? String.replace(value, ', 00:00:00', '') : value}
+    }
+
     @private {
         relativeDate = Neos.Fusion:DataStructure {
             earliest = ${props.relativeEarliestDate}
