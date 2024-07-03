@@ -53,7 +53,9 @@
                 label: "${I18n.translate('Litefyr.PaperTiger:NodeTypes.Mixin.DefaultForm:options.template.contact')}"
               childNodes:
                 twoCols:
-                  type: 'Litefyr.PaperTiger:TwoCols'
+                  type: 'Litefyr.PaperTiger:MultiColumn'
+                  properties:
+                    columns: 2
                   childNodes:
                     name:
                       type: 'Sitegeist.PaperTiger:Field.Text.SingleLine'
@@ -61,18 +63,21 @@
                         name: 'name'
                         label: "${I18n.translate('Litefyr.PaperTiger:NodeTypes.Mixin.DefaultForm:options.template.name')}"
                         isRequired: true
+                        columns: 1
                     email:
                       type: 'Sitegeist.PaperTiger:Field.Email'
                       properties:
                         name: 'email'
                         label: "${I18n.translate('Litefyr.PaperTiger:NodeTypes.Mixin.DefaultForm:options.template.email')}"
                         isRequired: true
+                        columns: 1
                 message:
                   type: 'Sitegeist.PaperTiger:Field.Text.MultiLine'
                   properties:
                     name: 'message'
                     label: "${I18n.translate('Litefyr.PaperTiger:NodeTypes.Mixin.DefaultForm:options.template.message')}"
                     isRequired: true
+                    columns: 1
         actions:
           name: actions
           childNodes:
