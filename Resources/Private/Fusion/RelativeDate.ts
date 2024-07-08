@@ -1,6 +1,7 @@
 import getDate from "Packages/Carbon/Carbon.Editor.RelativeDate/Resources/Private/Assets/getDate.js";
+import eventListener from "Packages/Carbon/Carbon.FileLoader/Resources/Private/Assets/EventListener";
 
-document.addEventListener("papertiger-relativedate:init", () => {
+eventListener("papertiger-relativedate:init", () => {
     Alpine.data("relativeDate", ({ earliest, latest }) => ({
         min: null,
         max: null,
