@@ -1,0 +1,3 @@
+prototype(Sitegeist.PaperTiger:Action.DataTemplate) {
+    dateTimeFormat = 'd.m.Y'
+}
