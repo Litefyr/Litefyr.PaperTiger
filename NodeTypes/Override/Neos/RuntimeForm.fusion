@@ -1,6 +1,7 @@
 prototype(Neos.Fusion.Form:Runtime.RuntimeForm) {
     @cache {
         mode = 'dynamic'
+        maximumLifetime = 86400
         entryIdentifier {
             node = ${node}
             editPreviewMode = ${node.context.currentRenderingMode.name}
