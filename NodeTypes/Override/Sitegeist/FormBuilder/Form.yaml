@@ -9,6 +9,8 @@
     'Litefyr.Integration:Mixin.TextWithContent.Label': true
     'Carbon.FirstElement:Mixin': true
     'Litefyr.Disturber:Mixin.Content': true
+    'Litefyr.Animations:Mixin.Element': true
+    'Litefyr.Animations:Mixin.TextWithContent': true
   ui:
     label: 'Litefyr.PaperTiger:NodeTypes.Override.Sitegeist:form'
     position: end

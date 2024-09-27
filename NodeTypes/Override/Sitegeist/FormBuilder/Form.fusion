@@ -32,6 +32,9 @@ prototype(Sitegeist.PaperTiger:Form) {
         _nodeIdentifier = ${node.identifier}
     }
 
+    animationMedia = Litefyr.Animations:Helper.Media
+    animationText = Litefyr.Animations:Helper.Text
+
     renderer.runtimeForm.renderer.form {
         @cache.context {
             currentPage = '_currentPage'
@@ -131,6 +134,7 @@ prototype(Sitegeist.PaperTiger:Form) {
                 id={"form_" + node.identifier}
                 "x-merge.transition"="update"
                 content={value}
+                animationMedia={props.inMultiColumn ? null : props.animationMedia}
                 {...props.fileLoader}
             />
         `
@@ -150,6 +154,8 @@ prototype(Sitegeist.PaperTiger:Form) {
             text = ${props.text}
             inBackend = ${props.inBackend}
             content = ${value}
+            animationText = ${props.animationText}
+            animationMedia = ${props.animationMedia}
         }
     }
 }

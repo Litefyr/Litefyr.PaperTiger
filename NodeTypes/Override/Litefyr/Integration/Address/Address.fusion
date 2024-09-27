@@ -3,5 +3,7 @@ prototype(Litefyr.Presentation:Module.Address) {
         @if.set = ${q(node).property('additionalPaperTiger')}
         contentElement = false
         inMultiColumn = true
+        animationMedia >
+        animationText >
     }
 }
