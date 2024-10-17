@@ -10,6 +10,15 @@ This package is available via [packagist]. Run `composer require litefyr/paperti
 
 > In order to work correctly you'll need a working [Litefyr] instance running. Here you'll find the basis [Distribution]
 
+### Adjust build stack
+
+Make sure following entry is add to your `pipeline.yaml`:
+
+```yaml
+packages:
+  - package: ../Packages/Litefyr/Litefyr.PaperTiger
+```
+
 [litefyr]: https://litefyr.io
 [distribution]: https://github.com/Litefyr/Distribution
 [packagist]: https://packagist.org/packages/litefyr/papertiger
