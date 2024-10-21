@@ -9,6 +9,9 @@ Sitegeist:
       - time
 
 Litefyr:
+  Migrations:
+    node:
+      20240628113150: true
   PaperTiger:
     subject: 'Formular auf der Seite {documentLabel} wurde ausgefüllt'
     # Show spinning loading indicator after form submission possible values are 'after', 'inside' and false
