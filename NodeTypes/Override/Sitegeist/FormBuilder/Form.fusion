@@ -41,7 +41,7 @@ prototype(Sitegeist.PaperTiger:Form) {
             identifier  = '_nodeIdentifier'
         }
         attributes {
-            x-target = ${'form_' + _nodeIdentifier}
+            x-target = ${Configuration.setting('Litefyr.PaperTiger.showFeedbackAfterSendButton') ? 'feedback_' + _nodeIdentifier : 'form_' + _nodeIdentifier}
             x-init = true
             action = ${_currentPage + _formAction}
         }
@@ -57,6 +57,7 @@ prototype(Sitegeist.PaperTiger:Form) {
                     time = ${Form.Schema.string().isRequired().validator('Sitegeist.PaperTiger:TimestampWithHmac', {'minimumAge': 10, 'maximumAge': 86400})}
                 }
             }
+            content.class = "text-theme-front *:mt-8 @container transition-opacity group-[.sent]:opacity-50 group-[.sent]:pointer-events-none"
             content.@process.spamProtection = afx`
                 {value}
                 <div
@@ -106,7 +107,10 @@ prototype(Sitegeist.PaperTiger:Form) {
             </h2>
         </Litefyr.Presentation:Spacing>
         <form class={_formClass}>
-            <Sitegeist.PaperTiger:FieldCollection.Renderer nodePath="fields" />
+            <Sitegeist.PaperTiger:FieldCollection.Renderer
+                nodePath="fields"
+                class="text-theme-front *:mt-8 @container transition-opacity group-[.sent]:opacity-50 group-[.sent]:pointer-events-none"
+            />
             <Litefyr.PaperTiger:Component.SendButton />
         </form>
         <Litefyr.Presentation:Spacing padding={!props.inMultiColumn} tailwind="text-theme-front">
@@ -130,8 +134,12 @@ prototype(Sitegeist.PaperTiger:Form) {
             <Litefyr.Presentation:Spacing
                 padding={!props.inMultiColumn}
                 waveSpacing={true}
-                class="w-full has-prose loading-indicator"
+                class="w-full has-prose group aria-busy:pointer-events-none"
+                :class="locked&&'sent'"
                 id={"form_" + node.identifier}
+                x-data="{submitting:false,locked:false,sent:false}"
+                x-on:ajax:send="submitting=true;locked=true"
+                x-on:ajax:sent="submitting=false;sent=true"
                 "x-merge.transition"="update"
                 content={value}
                 animationMedia={props.inMultiColumn ? null : props.animationMedia}

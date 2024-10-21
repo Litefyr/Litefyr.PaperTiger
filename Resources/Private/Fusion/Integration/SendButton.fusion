@@ -1,10 +1,51 @@
 prototype(Litefyr.PaperTiger:Component.SendButton) < prototype(Neos.Fusion:Component) {
     appearance = ${q(node).closest('[theme]').property('theme') == 'main' ? 'minor' : 'main'}
     type = ${node.context.inBackend ? 'button' : 'submit'}
-    content = ${String.trim(q(node).property('sendLabel')) || 'Senden'}
-    class = 'mt-8'
 
-    renderer = Litefyr.Presentation:Atom.Button {
-        @apply.props = ${props}
+    sendLabel = ${String.trim(q(node).property('sendLabel')) || Translation.translate('send', 'Send', [], 'Main', 'Litefyr.PaperTiger')}
+    sendingLabel = ${String.trim(q(node).property('sendingLabel')) || Translation.translate('sending', 'Sending…', [], 'Main', 'Litefyr.PaperTiger')}
+    sentLabel = ${String.trim(q(node).property('sentLabel')) || Translation.translate('sent', 'Sent', [], 'Main', 'Litefyr.PaperTiger')}
+
+    identifier = ${_nodeIdentifier}
+
+    indicator = ${Configuration.setting('Litefyr.PaperTiger.loadingIndicator')}
+    showFeedbackAfterSendButton = ${this.identifier && Configuration.setting('Litefyr.PaperTiger.showFeedbackAfterSendButton')}
+
+    @private {
+        indicator = Litefyr.Presentation:Block.LoadingIndicator {
+            @if.set = ${props.indicator}
+            tagName = ${props.indicator == 'inside' ? 'span' : 'div'}
+            class = ${props.indicator == 'inside' ? '-my-fl-3xs -ml-2' : 'text-theme-back'}
+            theme = ${props.appearance}
+            delayTime = 1500
+            timeoutTime = 7000
+            dynamicWidth = true
+            xModel = 'submitting'
+        }
+        needWrapper = ${props.showFeedbackAfterSendButton || props.indicator == 'after'}
+        button = Litefyr.Presentation:Atom.Button {
+            appearance = ${props.appearance}
+            type = ${props.type}
+            content = ${props.sendLabel}
+            class = 'mt-8 group-[.sent]:opacity-80 group-[.sent]:pointer-events-none'
+            content = afx`
+                {props.indicator == 'inside' ? private.indicator : ''}
+                <span x-effect={"if(submitting){$el.innerText='" + props.sendingLabel + "'}if(sent){$el.innerText='" + props.sentLabel + "'}"}>
+                    {props.sendLabel}
+                </span>
+            `
+        }
     }
+
+    renderer = afx`
+        {!private.needWrapper ? private.button : ''}
+        <div
+            @if={private.needWrapper}
+            class="flex flex-wrap gap-4 items-center mt-8 *:!my-0"
+        >
+            {private.button}
+            {props.indicator == 'after' ? private.indicator : null}
+            <div @if={props.showFeedbackAfterSendButton} id={"feedback_" + props.identifier} class="empty:hidden"></div>
+        </div>
+    `
 }

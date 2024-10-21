@@ -7,6 +7,14 @@
                 <source>Send</source>
                 <target>Senden</target>
             </trans-unit>
+            <trans-unit id="sending" xml:space="preserve">
+                <source>Sending…</source>
+                <target>Sende…</target>
+            </trans-unit>
+            <trans-unit id="sent" xml:space="preserve">
+                <source>Sent</source>
+                <target>Gesendet</target>
+            </trans-unit>
             <trans-unit id="configuration.missing" xml:space="preserve">
                 <source>The following configuration is missing: {0}</source>
                 <target>Die folgende Konfiguration fehlt: {0}</target>

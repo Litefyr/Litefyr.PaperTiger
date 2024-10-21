@@ -6,6 +6,12 @@
             <trans-unit id="send" xml:space="preserve">
                 <source>Send</source>
             </trans-unit>
+            <trans-unit id="sending" xml:space="preserve">
+                <source>Sending…</source>
+            </trans-unit>
+            <trans-unit id="sent" xml:space="preserve">
+                <source>Sent</source>
+            </trans-unit>
             <trans-unit id="configuration.missing" xml:space="preserve">
                 <source>The following configuration is missing: {0}</source>
             </trans-unit>

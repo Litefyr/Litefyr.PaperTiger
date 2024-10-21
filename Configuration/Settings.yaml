@@ -11,6 +11,10 @@ Sitegeist:
 Litefyr:
   PaperTiger:
     subject: 'Formular auf der Seite {documentLabel} wurde ausgefüllt'
+    # Show spinning loading indicator after form submission possible values are 'after', 'inside' and false
+    loadingIndicator: after
+    # Show feedback after the send button and do not replace the form
+    showFeedbackAfterSendButton: true
     sender:
       address: '%env:MAILER_FROM%'
       name: 'Website {currentSiteName}'

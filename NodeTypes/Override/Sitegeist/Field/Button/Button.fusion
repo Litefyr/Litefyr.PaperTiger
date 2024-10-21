@@ -6,9 +6,12 @@ prototype(Sitegeist.PaperTiger:Field.Button) {
     renderer >
     renderer = afx`
         <Neos.Fusion.Form:FieldContainer field.name={props.name} tagName={null}>
-            <Neos.Fusion.Form:Button field.value={props.value} appearance={props.appearance} type={props.type}>
-                {props.label}
-            </Neos.Fusion.Form:Button>
+            <Neos.Fusion.Form:Button
+                field.value={props.value}
+                appearance={props.appearance}
+                type={props.type}
+                content={props.label}
+            />
         </Neos.Fusion.Form:FieldContainer>
     `
 }
