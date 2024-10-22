@@ -26,7 +26,6 @@ prototype(Litefyr.PaperTiger:Component.SendButton) < prototype(Neos.Fusion:Compo
         button = Litefyr.Presentation:Atom.Button {
             appearance = ${props.appearance}
             type = ${props.type}
-            content = ${props.sendLabel}
             class = 'mt-8 group-[.sent]:opacity-80 group-[.sent]:pointer-events-none'
             content = afx`
                 {props.indicator == 'inside' ? private.indicator : ''}

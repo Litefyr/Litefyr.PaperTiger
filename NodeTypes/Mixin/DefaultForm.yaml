@@ -53,7 +53,7 @@
               properties:
                 label: "${I18n.translate('Litefyr.PaperTiger:NodeTypes.Mixin.DefaultForm:options.template.contact')}"
               childNodes:
-                twoCols:
+                multiColumn:
                   type: 'Litefyr.PaperTiger:MultiColumn'
                   properties:
                     columns: 2
