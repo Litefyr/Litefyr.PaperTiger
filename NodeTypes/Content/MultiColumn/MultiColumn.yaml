@@ -3,17 +3,12 @@ Litefyr.PaperTiger:MultiColumn:
     'Neos.Neos:Content': true
     'Sitegeist.PaperTiger:Field.Collection': true
     'Sitegeist.PaperTiger:Field.Constraint': true
+    'Litefyr.Integration:Mixin.LookGroup': true
   ui:
     label: i18n
     icon: columns
     group: form.elements
     position: 1300
-    inspector:
-      groups:
-        look:
-          label: i18n
-          icon: columns
-          position: 10
   constraints:
     nodeTypes:
       Litefyr.PaperTiger:MultiColumn: false

@@ -7,10 +7,6 @@
                 <source>Multi columns</source>
                 <target>Mehrere Spalten</target>
             </trans-unit>
-            <trans-unit id="groups.look" xml:space="preserve">
-                <source><![CDATA[Look & Feel]]></source>
-                <target><![CDATA[Look & Feel]]></target>
-            </trans-unit>
             <trans-unit id="properties.columns" xml:space="preserve">
                 <source>Number of columns</source>
                 <target>Anzahl Spalten</target>

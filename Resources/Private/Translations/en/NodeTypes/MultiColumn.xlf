@@ -6,9 +6,6 @@
             <trans-unit id="ui.label" xml:space="preserve">
                 <source>Multi columns</source>
             </trans-unit>
-            <trans-unit id="groups.look" xml:space="preserve">
-                <source><![CDATA[Look & Feel]]></source>
-            </trans-unit>
             <trans-unit id="properties.columns" xml:space="preserve">
                 <source>Number of columns</source>
             </trans-unit>

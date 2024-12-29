@@ -1,4 +1,7 @@
 privilegeTargets:
+  'Neos\Flow\Security\Authorization\Privilege\Method\MethodPrivilege':
+    'Litefyr.PaperTiger:FormController':
+      matcher: 'method(public Litefyr\PaperTiger\Controller\FormController->(.*)Action())'
   'Neos\ContentRepository\Security\Authorization\Privilege\Node\EditNodePropertyPrivilege':
     'Litefyr.PaperTiger:FormProperties':
       label: Edit the settings for Forms
@@ -15,4 +18,9 @@ roles:
     description: Grants access to the properties to edit the basic configuration for PaperTiger
     privileges:
       - privilegeTarget: 'Litefyr.PaperTiger:FormProperties'
+        permission: GRANT
+
+  'Neos.Flow:Everybody':
+    privileges:
+      - privilegeTarget: 'Litefyr.PaperTiger:FormController'
         permission: GRANT

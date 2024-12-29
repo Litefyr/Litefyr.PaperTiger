@@ -8,10 +8,12 @@ Sitegeist:
       - errareHumanumEst
       - time
 
-Litefyr:
-  Migrations:
+Carbon:
+  AutoMigrate:
     node:
       20240628113150: true
+
+Litefyr:
   PaperTiger:
     subject: 'Formular auf der Seite {documentLabel} wurde ausgefüllt'
     # Show spinning loading indicator after form submission possible values are 'after', 'inside' and false
@@ -23,6 +25,11 @@ Litefyr:
       name: 'Website {currentSiteName}'
 
 Neos:
+  Flow:
+    mvc:
+      routes:
+        Litefyr.PaperTiger:
+          position: 'start 1'
   Neos:
     fusion:
       autoInclude:

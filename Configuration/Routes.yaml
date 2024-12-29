@@ -1,0 +1,7 @@
+- name: 'HMAC API for form SPAM protection'
+  uriPattern: '~form/hmac'
+  defaults:
+    '@package': 'Litefyr.PaperTiger'
+    '@controller': 'Form'
+    '@action': 'hmac'
+  httpMethods: ['HEAD']
