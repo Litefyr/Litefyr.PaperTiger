@@ -11,7 +11,10 @@
     'Litefyr.Integration:Mixin.Breakout.IfTextEnabled': true
   ui:
     label: 'Litefyr.PaperTiger:NodeTypes.Override.Sitegeist:form'
-    position: end
+    position: 10
+    group: form
+    help:
+      message: 'Litefyr.PaperTiger:NodeTypes.Override.Sitegeist:ui.help.message'
     inspector:
       groups:
         look:

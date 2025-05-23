@@ -16,7 +16,7 @@
                 <source>Overwrite recipient address</source>
             </trans-unit>
             <trans-unit id="recipientAddress.help" xml:space="preserve">
-                <source>The e-mail address to which the form data should be sent.</source>
+                <source>The email address to which the form data should be sent.</source>
             </trans-unit>
             <trans-unit id="recipientName" xml:space="preserve">
                 <source>Overwrite recipient name</source>
@@ -28,7 +28,7 @@
                 <source>Overwrite sender address</source>
             </trans-unit>
             <trans-unit id="senderAddress.help" xml:space="preserve">
-                <source>The e-mail address from which the form data should be sent.</source>
+                <source>The email address from which the form data should be sent.</source>
             </trans-unit>
             <trans-unit id="senderName" xml:space="preserve">
                 <source>Overwrite sender name</source>
@@ -40,7 +40,7 @@
                 <source>Overwrite subject</source>
             </trans-unit>
             <trans-unit id="subject.help" xml:space="preserve">
-                <source>The subject of the e-mail containing the form data. `{documentLabel}` is replaced with the name of the document.</source>
+                <source>The subject of the email containing the form data. `{documentLabel}` is replaced with the name of the document.</source>
             </trans-unit>
         </body>
     </file>

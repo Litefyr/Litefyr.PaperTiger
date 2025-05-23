@@ -1,5 +1,5 @@
 prototype(Litefyr.PaperTiger:Component.SendButton) < prototype(Neos.Fusion:Component) {
-    appearance = ${q(node).closest('[theme]').property('theme') == 'main' ? 'minor' : 'main'}
+    appearance = 'nested'
     type = ${node.context.inBackend ? 'button' : 'submit'}
 
     sendLabel = ${String.trim(q(node).property('sendLabel')) || Translation.translate('send', 'Send', [], 'Main', 'Litefyr.PaperTiger')}

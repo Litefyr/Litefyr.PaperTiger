@@ -1,7 +1,7 @@
 prototype(Sitegeist.PaperTiger:Action.Message.Definition) {
     message.@process.wrap = Neos.Fusion:Augmenter {
         id = ${'feedback_' + _nodeIdentifier}
-        class = 'my-12 text-lg'
+        class = 'my-12 text-lg text-balance'
         content = ${value}
     }
 }

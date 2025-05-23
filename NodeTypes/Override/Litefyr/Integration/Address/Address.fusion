@@ -1,9 +1,11 @@
 prototype(Litefyr.Presentation:Module.Address) {
-    form = Sitegeist.PaperTiger:Form {
-        @if.set = ${q(node).property('additionalPaperTiger')}
-        contentElement = false
-        inMultiColumn = true
-        animationMedia >
-        animationText >
+    form.papertiger {
+        condition = ${q(node).property('additionalPaperTiger')}
+        renderer = Sitegeist.PaperTiger:Form {
+            contentElement = false
+            inMultiColumn = true
+            animationMedia >
+            animationText >
+        }
     }
 }

@@ -6,6 +6,10 @@
             <trans-unit id="overwriteDefaultValues" xml:space="preserve">
                 <source>Overwrite default values</source>
             </trans-unit>
+            <trans-unit id="ui.help.message" xml:space="preserve">
+                <source>* Clickable form
+* Optional text field</source>
+            </trans-unit>
             <trans-unit id="template" xml:space="preserve">
                 <source>Template</source>
             </trans-unit>

@@ -40,7 +40,7 @@
                 <source>No</source>
             </trans-unit>
             <trans-unit id="backend.email.invalid" xml:space="preserve">
-                <source><![CDATA[<strong class="text-current">{0}</strong> is not a valid e-mail address]]></source>
+                <source><![CDATA[<strong class="text-current">{0}</strong> is not a valid email address]]></source>
             </trans-unit>
             <trans-unit id="field.corpusDelicti" xml:space="preserve">
                 <source>Please leave this field empty</source>
